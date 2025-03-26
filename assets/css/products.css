@@ -1,0 +1,176 @@
+/* 
+ * Products Page Specific CSS for Otimi Source Website
+ */
+
+/* Products Section */
+.products-section {
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-container {
+    width: 100%;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: var(--medium-text);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+@media screen and (min-width: 900px) {
+    .product-card {
+        flex-direction: row;
+    }
+}
+
+.product-image {
+    flex: 1;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-content {
+    flex: 2;
+    padding: 1.5rem;
+}
+
+.product-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.product-features, .product-results, .product-solutions {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.product-features h4, .product-results h4, .product-solutions h4 {
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.product-features ul, .product-solutions ul {
+    padding-left: 1.5rem;
+}
+
+.product-features ul li, .product-solutions ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Industry Solutions */
+.industry-solutions {
+    background-color: var(--light-bg);
+    padding: 3rem 5%;
+    position: relative;
+}
+
+.industry-solutions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-color), var(--primary-blue));
+}
+
+.solutions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.industry-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.industry-card:hover {
+    transform: translateY(-8px);
+}
+
+.industry-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.industry-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+/* Responsive design for products page */
+@media screen and (max-width: 768px) {
+    .product-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .product-image {
+        min-height: 200px;
+    }
+    
+    .product-content {
+        padding: 1.2rem;
+    }
+    
+    .product-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .industry-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}

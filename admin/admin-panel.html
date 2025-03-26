@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Otimi Source - Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <style>
+        /* Admin-specific styles */
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: var(--secondary-blue);
+            color: var(--light-text);
+            padding: 2rem 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .admin-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .menu {
+            list-style: none;
+        }
+        
+        .menu-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .menu-link {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-link:hover, .menu-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--accent-teal);
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            background-color: var(--light-bg);
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .page-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .logout-btn {
+            background-color: var(--accent-teal);
+            color: var(--light-text);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background-color: var(--light-teal);
+            color: var(--primary-blue);
+        }
+        
+        .content-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-title {
+            font-size: 1rem;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-change {
+            font-size: 0.9rem;
+            color: #28a745;
+        }
+        
+        .stat-change.negative {
+            color: #dc3545;
+        }
+        
+        .recent-activity {
+            margin-top: 1rem;
+        }
+        
+        .activity-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--medium-bg);
+            display: flex;
+            align-items: center;
+        }
+        
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--light-text);
+        }
+        
+        .icon-edit {
+            background-color: var(--accent-teal);
+        }
+        
+        .icon-add {
+            background-color: #28a745;
+        }
+        
+        .icon-delete {
+            background-color: #dc3545;
+        }
+        
+        .activity-details {
+            flex: 1;
+        }
+        
+        .activity-message {
+            margin-bottom: 0.2rem;
+        }
+        
+        .activity-time {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="../assets/img/logo.png" alt="Otimi Source Logo" class="logo">
+                <span class="admin-title">Otimi Source Admin</span>
+            </div>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="admin-panel.html" class="menu-link active">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-pages.html" class="menu-link">
+                        Pages
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-services.html" class="menu-link">
+                        Services
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-products.html" class="menu-link">
+                        Products
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-testimonials.html" class="menu-link">
+                        Testimonials
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-team.html" class="menu-link">
+                        Team Members
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-settings.html" class="menu-link">
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1 class="page-title">Dashboard</h1>
+                <button class="logout-btn" id="logout-btn">Logout</button>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <h3 class="stat-title">Page Views</h3>
+                    <p class="stat-value">1,254</p>
+                    <p class="stat-change">+12.5% from last month</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-title">Contact Form Submissions</h3>
+                    <p class="stat-value">37</p>
+                    <p class="stat-change">+5.7% from last month</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-title">Products Added</h3>
+                    <p class="stat-value">8</p>
+                    <p class="stat-change negative">-2.3% from last month</p>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h2>Recent Activity</h2>
+                <div class="recent-activity">
+                    <div class="activity-item">
+                        <div class="activity-icon icon-edit">E</div>
+                        <div class="activity-details">
+                            <p class="activity-message">Homepage hero section updated</p>
+                            <p class="activity-time">Today, 10:45 AM</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon icon-add">A</div>
+                        <div class="activity-details">
+                            <p class="activity-message">New service "AI Implementation" added</p>
+                            <p class="activity-time">Yesterday, 3:20 PM</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon icon-delete">D</div>
+                        <div class="activity-details">
+                            <p class="activity-message">Testimonial from "ABC Corporation" removed</p>
+                            <p class="activity-time">Mar 16, 2025, 11:30 AM</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon icon-edit">E</div>
+                        <div class="activity-details">
+                            <p class="activity-message">Contact information updated</p>
+                            <p class="activity-time">Mar 15, 2025, 9:15 AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h2>Quick Actions</h2>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="admin-pages.html" class="btn btn-primary">Edit Pages</a>
+                    <a href="admin-products.html" class="btn btn-primary">Manage Products</a>
+                    <a href="admin-services.html" class="btn btn-primary">Manage Services</a>
+                    <a href="admin-settings.html" class="btn btn-primary">Website Settings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>

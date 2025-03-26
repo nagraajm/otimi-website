@@ -1,0 +1,202 @@
+/* 
+ * Services Page Specific CSS for Otimi Source Website
+ */
+
+/* Services Intro */
+.services-intro {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Services Section */
+.services-section {
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-icon {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    background-color: var(--light-accent);
+    color: var(--primary-blue);
+}
+
+.service-content {
+    padding: 1.5rem;
+}
+
+.service-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.service-features {
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.service-features li {
+    margin-bottom: 0.6rem;
+}
+
+/* Staffing Section */
+.staffing-section {
+    background-color: var(--light-bg);
+    padding: 3rem 5%;
+}
+
+.staffing-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.staffing-text h3 {
+    color: var(--primary-blue);
+    margin: 1.2rem 0 0.8rem;
+    font-size: 1.3rem;
+}
+
+.staffing-text ul {
+    padding-left: 1.5rem;
+}
+
+.staffing-text li {
+    margin-bottom: 0.6rem;
+}
+
+.staffing-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
+}
+
+.staffing-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Service Process */
+.service-process {
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.process-step:hover {
+    transform: translateY(-8px);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.process-step h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+/* Responsive design for services page */
+@media screen and (max-width: 900px) {
+    .staffing-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .staffing-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .process-step {
+        min-width: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-steps {
+        flex-direction: column;
+    }
+    
+    .process-step {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .staffing-image {
+        max-width: 100%;
+    }
+}

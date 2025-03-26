@@ -1,0 +1,293 @@
+/* 
+ * Home Page Specific CSS for Otimi Source Website
+ */
+
+/* Hero Section with right-aligned content */
+.hero {
+    position: relative;
+    color: var(--light-text);
+    padding: 5rem 5% 3rem;
+    margin-top: 60px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align content to the right */
+    overflow: hidden;
+}
+
+.hero-background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Dark overlay on hero to ensure text readability */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(29, 53, 95, 0.6); /* Semi-transparent dark blue */
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 500px; /* Reduced width for right side alignment */
+    margin-right: 8%; /* Add space from right edge */
+    position: relative;
+    z-index: 2;
+    text-align: left; /* Left align the text */
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Features Section */
+.features {
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background-color: var(--light-accent);
+    color: var(--primary-blue);
+    font-size: 2rem;
+}
+
+.feature-content {
+    padding: 1.2rem;
+}
+
+.feature-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+}
+
+/* Solutions Section */
+.solutions {
+    padding: 3rem 5%;
+    background-color: var(--light-bg);
+    position: relative;
+}
+
+.solutions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-color), var(--primary-blue));
+}
+
+.solutions-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.solution-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem 0.5rem;
+}
+
+.tab-btn:hover {
+    color: var(--accent-color);
+}
+
+.tab-btn.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+.solution-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.solution-content h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-blue);
+}
+
+.solution-content ul {
+    margin-bottom: 1.2rem;
+}
+
+.solution-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--primary-blue);
+    color: var(--light-text);
+    padding: 3rem 0;
+    position: relative;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(29, 53, 95, 0.85), rgba(29, 53, 95, 0.95));
+    z-index: 0;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonials .section-title {
+    color: var(--light-text);
+    margin-bottom: 2rem;
+}
+
+.testimonials .section-title::after {
+    background-color: var(--light-text);
+}
+
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.testimonial-card {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1.5rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+/* Responsive design for home page */
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 4rem 5% 2.5rem;
+        min-height: 320px;
+        justify-content: center; /* Center on mobile */
+    }
+    
+    .hero-content {
+        margin-right: 0; /* Remove right margin on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .solution-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        margin-bottom: 0.8rem;
+        width: 80%;
+        text-align: center;
+    }
+    
+    .testimonial-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 3.5rem 5% 2rem;
+        min-height: 280px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}

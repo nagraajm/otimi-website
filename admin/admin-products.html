@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Otimi Source - Products Management</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <style>
+        /* Admin-specific styles */
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: var(--secondary-blue);
+            color: var(--light-text);
+            padding: 2rem 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .admin-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .menu {
+            list-style: none;
+        }
+        
+        .menu-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .menu-link {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-link:hover, .menu-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--accent-teal);
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            background-color: var(--light-bg);
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .page-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .logout-btn {
+            background-color: var(--accent-teal);
+            color: var(--light-text);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background-color: var(--light-teal);
+            color: var(--primary-blue);
+        }
+        
+        .content-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        
+        .table th, .table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .table th {
+            background-color: var(--light-bg);
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        .table tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        .action-btns {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .action-btn {
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .edit-btn {
+            background-color: var(--accent-teal);
+            color: var(--light-text);
+        }
+        
+        .edit-btn:hover {
+            background-color: var(--light-teal);
+            color: var(--primary-blue);
+        }
+        
+        .delete-btn {
+            background-color: #dc3545;
+            color: var(--light-text);
+        }
+        
+        .delete-btn:hover {
+            background-color: #bd2130;
+        }
+        
+        .add-btn {
+            margin-bottom: 1rem;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--medium-bg);
+            padding-bottom: 1rem;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-text);
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--medium-bg);
+            padding-top: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(0, 194, 203, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="../assets/img/logo.png" alt="Otimi Source Logo" class="logo">
+                <span class="admin-title">Otimi Source Admin</span>
+            </div>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="admin-panel.html" class="menu-link">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-pages.html" class="menu-link">
+                        Pages
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-services.html" class="menu-link">
+                        Services
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-products.html" class="menu-link active">
+                        Products
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-testimonials.html" class="menu-link">
+                        Testimonials
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-team.html" class="menu-link">
+                        Team Members
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-settings.html" class="menu-link">
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1 class="page-title">Products Management</h1>
+                <button class="logout-btn" id="logout-btn">Logout</button>
+            </div>
+            
+            <div class="content-card">
+                <button class="btn btn-primary add-btn" id="add-product-btn">+ Add New Product</button>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-table-body">
+                        <!-- Products will be loaded here dynamically -->
+                        <tr>
+                            <td>Enterprise AI & Data Integration Platform</td>
+                            <td>Core Platform</td>
+                            <td>Active</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn edit-btn" data-id="1">Edit</button>
+                                    <button class="action-btn delete-btn" data-id="1">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>IntelliForce AI</td>
+                            <td>SaaS</td>
+                            <td>Active</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn edit-btn" data-id="2">Edit</button>
+                                    <button class="action-btn delete-btn" data-id="2">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>WorkforceOS™</td>
+                            <td>Talent Platform</td>
+                            <td>Active</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn edit-btn" data-id="3">Edit</button>
+                                    <button class="action-btn delete-btn" data-id="3">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CustomForge™</td>
+                            <td>Development Platform</td>
+                            <td>Draft</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn edit-btn" data-id="4">Edit</button>
+                                    <button class="action-btn delete-btn" data-id="4">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Product Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Add New Product</h2>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                <div class="form-group">
+                    <label for="product-name" class="form-label">Product Name</label>
+                    <input type="text" id="product-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category" class="form-label">Category</label>
+                    <select id="product-category" class="form-control" required>
+                        <option value="">Select Category</option>
+                        <option value="Core Platform">Core Platform</option>
+                        <option value="SaaS">SaaS</option>
+                        <option value="Talent Platform">Talent Platform</option>
+                        <option value="Development Platform">Development Platform</option>
+                        <option value="Analytics">Analytics</option>
+                        <option value="Integration">Integration</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-description" class="form-label">Description</label>
+                    <textarea id="product-description" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-features" class="form-label">Key Features (one per line)</label>
+                    <textarea id="product-features" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-status" class="form-label">Status</label>
+                    <select id="product-status" class="form-control" required>
+                        <option value="Active">Active</option>
+                        <option value="Draft">Draft</option>
+                        <option value="Archived">Archived</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel-product">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="save-product">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2 class="modal-title">Confirm Deletion</h2>
+                <button class="close-btn" id="close-delete-modal">&times;</button>
+            </div>
+            <p>Are you sure you want to delete this product? This action cannot be undone.</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-delete">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>
