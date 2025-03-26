@@ -94,21 +94,47 @@ header {
     margin: 0 auto;
 }
 
+/* Logo and brand styling for base.css */
+
+/* Brand name and tagline styles */
 .logo-container {
     display: flex;
     align-items: center;
 }
 
 .logo {
-    width: 60px; /* Increased from default size */
+    width: 60px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 5px;
+}
+
+.brand-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
 }
 
 .brand-name {
-    font-size: 1.6rem; /* Increased font size */
-    font-weight: 700; /* Made bolder */
-    color: var(--primary-blue);
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-left: 1px;
+}
+
+.brand-otimi {
+    color: inherit;
+}
+
+.brand-source {
+    color: #01BBD4;
+}
+
+.tagline {
+    font-size: 0.5rem;
+    color: #00A0C6;
+    letter-spacing: 0.05rem;
+    margin-top: 1px;
+    margin-left: 5px;
 }
 
 .nav-links {

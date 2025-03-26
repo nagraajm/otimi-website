@@ -2,42 +2,6 @@
  * Products Page Specific CSS for Otimi Source Website
  */
 
-/* Brand name and tagline styles */
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    margin-right: 8px;
-}
-
-.brand-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.brand-name {
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.1;
-}
-
-.brand-otimi {
-    color: inherit;
-}
-
-.brand-source {
-    color: #01BBD4;
-}
-
-.tagline {
-    font-size: 0.7rem;
-    color: #00A0C6;
-    letter-spacing: 0.05rem;
-    margin-top: 1px;
-}
-
 /* Products Section */
 .products-section {
     padding: 3rem 5%;
@@ -59,6 +23,7 @@
     margin-right: auto;
 }
 
+/* Product Card Styles */
 .product-card {
     background-color: white;
     border-radius: 10px;
@@ -66,40 +31,22 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 2.5rem;
     border: 1px solid var(--border-color);
-}
-
-.product-content-wrapper {
     display: flex;
     flex-direction: column;
 }
 
-@media screen and (min-width: 900px) {
-    .product-content-wrapper {
-        flex-direction: row;
-        min-height: 360px;
-    }
-}
-
-.product-image {
-    flex: 0 0 45%; /* Fixed width for the image section */
-    position: relative;
-    overflow: hidden;
-}
-
+/* Image Styles - Full-width stretched images with controlled height */
 .product-img {
     width: 100%;
-    height: 100%;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 250px; /* Reduced height */
     object-fit: cover;
-    object-position: center;
-    transition: transform 0.5s ease;
 }
 
-.product-card:hover .product-img {
-    transform: scale(1.05);
-}
-
+/* Content Styles */
 .product-content {
-    flex: 1;
     padding: 1.8rem;
 }
 
@@ -195,12 +142,8 @@
         margin-bottom: 1.5rem;
     }
     
-    .product-content-wrapper {
-        flex-direction: column-reverse;
-    }
-    
-    .product-image {
-        min-height: 220px;
+    .product-img {
+        max-height: 180px;
     }
     
     .product-content {
@@ -220,7 +163,7 @@
     }
     
     .tagline {
-        font-size: 0.65rem;
+        font-size: 0.45rem;
     }
 }
 
