@@ -100,13 +100,14 @@ header {
 }
 
 .logo {
-    height: 40px;
+    width: 60px; /* Increased from default size */
+    height: auto;
     margin-right: 10px;
 }
 
 .brand-name {
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 1.6rem; /* Increased font size */
+    font-weight: 700; /* Made bolder */
     color: var(--primary-blue);
 }
 
