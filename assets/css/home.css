@@ -1,14 +1,33 @@
 /* 
  * Home Page Specific CSS for Otimi Source Website
+ * Updated with logo visibility improvements and right-aligned hero content
  */
+
+/* Logo improvements */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px; /* Increased from default size */
+    height: auto;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.6rem; /* Increased font size */
+    font-weight: 700; /* Made bolder */
+    color: var(--primary-blue);
+}
 
 /* Hero Section with right-aligned content */
 .hero {
     position: relative;
     color: var(--light-text);
-    padding: 5rem 5% 3rem;
+    padding: 4rem 5% 2rem;
     margin-top: 60px;
-    min-height: 500px;
+    min-height: 400px; /* Reduced height from 500px */
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Align content to the right */
@@ -42,7 +61,10 @@
     margin-right: 8%; /* Add space from right edge */
     position: relative;
     z-index: 2;
-    text-align: left; /* Left align the text */
+    text-align: right; /* Right align the text */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Ensure content is right-aligned */
 }
 
 .hero h1 {
@@ -242,15 +264,24 @@
 
 /* Responsive design for home page */
 @media screen and (max-width: 768px) {
+    .logo {
+        width: 50px; /* Still larger than default but adjusted for mobile */
+    }
+    
+    .brand-name {
+        font-size: 1.4rem; /* Slightly smaller on mobile but still visible */
+    }
+
     .hero {
-        padding: 4rem 5% 2.5rem;
-        min-height: 320px;
+        padding: 3rem 5% 2rem;
+        min-height: 250px; /* Significantly reduced height on mobile */
         justify-content: center; /* Center on mobile */
     }
     
     .hero-content {
         margin-right: 0; /* Remove right margin on mobile */
         text-align: center; /* Center text on mobile */
+        align-items: center; /* Center align items on mobile */
     }
     
     .hero h1 {
@@ -275,8 +306,8 @@
 
 @media screen and (max-width: 480px) {
     .hero {
-        padding: 3.5rem 5% 2rem;
-        min-height: 280px;
+        padding: 2.5rem 5% 1.5rem;
+        min-height: 200px; /* Further reduced height for small mobile devices */
     }
     
     .hero h1 {
