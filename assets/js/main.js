@@ -1,5 +1,5 @@
 /**
- * Main JavaScript file for Otimi Source website - Optimized for performance
+ * Main JavaScript file for OTIMI Source website - Optimized for performance
  */
 
 // Wait for DOM to be fully loaded

@@ -1,5 +1,5 @@
 /**
- * Admin Panel JavaScript for Otimi Source Website
+ * Admin Panel JavaScript for OTIMI Source Website
  * Optimized for performance
  */
 
@@ -327,7 +327,7 @@ function getProductById(id) {
             name: 'CustomForge™',
             category: 'Development Platform',
             description: 'Development platform for custom business applications, enabling organizations to create tailored solutions for their unique requirements.',
-            features: 'No-code development interface\nAPI connectivity\nCustom business logic\nIntegration with other Otimi products',
+            features: 'No-code development interface\nAPI connectivity\nCustom business logic\nIntegration with other OTIMI products',
             status: 'Draft'
         }
     };
