@@ -15,8 +15,25 @@
     <link rel="stylesheet" href="assets/css/products.css">
 </head>
 <body>
-    <header id="header-container">
-        <!-- Header content will be loaded dynamically -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="assets/img/logo.webp" alt="Otimi Source Logo" class="logo">
+                <div class="brand-info">
+                    <span class="brand-name"><span class="brand-otimi">Otimi</span> <span class="brand-source">Source</span></span>
+                    <span class="tagline">Innovate . Integrate . Ignite .</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products & Solutions</a></li>
+                <li><a href="services.html">Services</a></li>
+                <!-- <li><a href="resources.html">Resources</a></li> -->
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="mobile-menu-btn">☰</div>
+        </nav>
     </header>
 
     <section class="page-header">
@@ -24,93 +41,123 @@
         <p>Empowering businesses with advanced AI solutions that boost efficiency, innovation, and growth</p>
     </section>
 
-    <section class="products-section">
-        <div class="product-container">
+    <section class="products-intro">
+        <div class="container">
             <h2 class="section-title">Our Suite of AI Solutions</h2>
-            <p class="section-subtitle">OTIMI Source offers a complete suite of products and services customized for today's enterprise challenges.</p>
+            <p class="intro-text">OTIMI Source offers a complete suite of products and services customized for today's enterprise challenges.</p>
+        </div>
+    </section>
+
+    <!-- Enterprise AI Platform Section -->
+    <section class="product-section" id="enterprise-ai">
+        <div class="container">
+            <h2 class="section-title">Enterprise AI & Data Integration Platform</h2>
             
-            <div class="product-card" id="enterprise-ai">
-                <img data-src="assets/img/enterprise-data-integration.webp" alt="Enterprise AI Platform" class="product-img" loading="lazy">
-                <div class="product-content">
-                    <h3>Enterprise AI & Data Integration Platform</h3>
-                    <p>Our Enterprise AI & Data Integration Platform transforms your business by connecting systems, automating processes, and enabling data-driven decisions across industries. We build a strong foundation for your AI initiatives with seamless data flow and clear insights.</p>
+            <div class="product-intro">
+                <p>Our Enterprise AI & Data Integration Platform transforms your business by connecting systems, automating processes, and enabling data-driven decisions across industries. We build a strong foundation for your AI initiatives with seamless data flow and clear insights.</p>
+            </div>
+            
+            <div class="product-content">
+                <div class="product-text">
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>Intelligent Reporting & Analytics:</strong> Simple, natural language queries that help everyone access vital information, automated documentation and reporting, custom executive dashboards and KPI tracking</li>
+                        <li><strong>Process Automation Suite:</strong> Automated document processing, streamlined workflows, reduced administrative work</li>
+                        <li><strong>Enterprise Data Integration:</strong> Seamless system connectivity, central data management, real-time access to information</li>
+                        <li><strong>Digital Transformation Strategy:</strong> Thorough assessment, step-by-step implementation, change management support</li>
+                    </ul>
                     
-                    <div class="product-features">
-                        <h4>Key Features:</h4>
-                        <ul>
-                            <li><strong>Intelligent Reporting & Analytics:</strong> Simple, natural language queries that help everyone access vital information, automated documentation and reporting, custom executive dashboards and KPI tracking</li>
-                            <li><strong>Process Automation Suite:</strong> Automated document processing, streamlined workflows, reduced administrative work</li>
-                            <li><strong>Enterprise Data Integration:</strong> Seamless system connectivity, central data management, real-time access to information</li>
-                            <li><strong>Digital Transformation Strategy:</strong> Thorough assessment, step-by-step implementation, change management support</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-results">
-                        <h4>Transform Your Business Operations:</h4>
-                        <p>Our platform cuts manual work by up to 50%, reduces administrative costs by 10–12%, and delivers real-time insights for smarter decisions.</p>
-                    </div>
+                    <h3>Transform Your Business Operations:</h3>
+                    <p>Our platform cuts manual work by up to 50%, reduces administrative costs by 10–12%, and delivers real-time insights for smarter decisions.</p>
                     
                     <a href="contact.html" class="btn btn-primary">Request Information</a>
                 </div>
+                <div class="product-image">
+                    <img src="assets/img/enterprise-data-integration.webp" alt="Enterprise AI Platform">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- IntelliForce AI Section -->
+    <section class="product-section" id="intelliforce">
+        <div class="container">
+            <h2 class="section-title">IntelliForce AI</h2>
+            
+            <div class="product-intro">
+                <p>In today's fast-paced digital landscape, businesses need agile and scalable AI solutions to stay competitive. That's why OTIMI Source offers IntelliForce AI, a comprehensive suite of Service as Software (SaaS) offerings that put the power of AI automation directly into your hands.</p>
             </div>
             
-            <div class="product-card" id="intelliforce">
-                <img data-src="assets/img/intelliforce-ai.webp" alt="IntelliForce AI" class="product-img" loading="lazy">
-                <div class="product-content">
-                    <h3>IntelliForce AI</h3>
-                    <p>In today's fast-paced digital landscape, businesses need agile and scalable AI solutions to stay competitive. That's why OTIMI Source offers IntelliForce AI, a comprehensive suite of Service as Software (SaaS) offerings that put the power of AI automation directly into your hands.</p>
-                    
-                    <div class="product-features">
-                        <h4>Benefits:</h4>
-                        <ul>
-                            <li><strong>Scalability:</strong> Easily scale your AI capabilities as your business grows, ensuring you can adapt to evolving demands without significant infrastructure investments</li>
-                            <li><strong>Accessibility:</strong> Access your AI solutions from anywhere, at any time, empowering your teams with the tools they need, wherever they are</li>
-                            <li><strong>Ease of Deployment:</strong> Rapidly deploy and integrate AI solutions without complex infrastructure requirements, minimizing downtime and accelerating time-to-value</li>
-                            <li><strong>Cost-Effectiveness:</strong> Reduce upfront investment and ongoing maintenance costs with a subscription model, allowing you to focus your resources on strategic initiatives</li>
-                        </ul>
-                    </div>
+            <div class="product-content">
+                <div class="product-text">
+                    <h3>Benefits:</h3>
+                    <ul>
+                        <li><strong>Scalability:</strong> Easily scale your AI capabilities as your business grows, ensuring you can adapt to evolving demands without significant infrastructure investments</li>
+                        <li><strong>Accessibility:</strong> Access your AI solutions from anywhere, at any time, empowering your teams with the tools they need, wherever they are</li>
+                        <li><strong>Ease of Deployment:</strong> Rapidly deploy and integrate AI solutions without complex infrastructure requirements, minimizing downtime and accelerating time-to-value</li>
+                        <li><strong>Cost-Effectiveness:</strong> Reduce upfront investment and ongoing maintenance costs with a subscription model, allowing you to focus your resources on strategic initiatives</li>
+                    </ul>
                     
                     <a href="contact.html" class="btn btn-primary">Learn More</a>
                 </div>
+                <div class="product-image">
+                    <img src="assets/img/intelliforce-ai.webp" alt="IntelliForce AI">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- WorkforceOS Section -->
+    <section class="product-section" id="workforceos">
+        <div class="container">
+            <h2 class="section-title">WorkforceOS™</h2>
+            
+            <div class="product-intro">
+                <p>Our flagship intelligent talent platform revolutionizes how organizations manage, develop, and optimize their workforce through AI-powered insights and automation.</p>
             </div>
             
-            <div class="product-card" id="workforceos">
-                <img data-src="assets/img/work-force.webp" alt="WorkforceOS Platform" class="product-img" loading="lazy">
-                <div class="product-content">
-                    <h3>WorkforceOS™</h3>
-                    <p>Our flagship intelligent talent platform revolutionizes how organizations manage, develop, and optimize their workforce through AI-powered insights and automation.</p>
-                    
-                    <div class="product-features">
-                        <h4>Components:</h4>
-                        <ul>
-                            <li><strong>AI Implementation & Solutions:</strong> Practical AI applications solving real business problems</li>
-                            <li><strong>CustomForge™:</strong> Development platform for custom business applications</li>
-                            <li><strong>SkillForge™:</strong> AI-driven learning management system</li>
-                            <li><strong>StrategyCompass™:</strong> Digital transformation advisory platform</li>
-                        </ul>
-                    </div>
+            <div class="product-content">
+                <div class="product-text">
+                    <h3>Components:</h3>
+                    <ul>
+                        <li><strong>AI Implementation & Solutions:</strong> Practical AI applications solving real business problems</li>
+                        <li><strong>CustomForge™:</strong> Development platform for custom business applications</li>
+                        <li><strong>SkillForge™:</strong> AI-driven learning management system</li>
+                        <li><strong>StrategyCompass™:</strong> Digital transformation advisory platform</li>
+                    </ul>
                     
                     <a href="contact.html" class="btn btn-primary">Request Information</a>
                 </div>
+                <div class="product-image">
+                    <img src="assets/img/work-force.webp" alt="WorkforceOS Platform">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CustomForge Section -->
+    <section class="product-section" id="customforge">
+        <div class="container">
+            <h2 class="section-title">CustomForge™</h2>
+            
+            <div class="product-intro">
+                <p>Development platform for custom business applications, enabling organizations to create tailored solutions for their unique requirements.</p>
             </div>
             
-            <div class="product-card" id="customforge">
-                <img data-src="assets/img/custom-solutions.webp" alt="CustomForge Platform" class="product-img" loading="lazy">
-                <div class="product-content">
-                    <h3>CustomForge™</h3>
-                    <p>Development platform for custom business applications, enabling organizations to create tailored solutions for their unique requirements.</p>
-                    
-                    <div class="product-features">
-                        <h4>Key Features:</h4>
-                        <ul>
-                            <li>No-code development interface</li>
-                            <li>API connectivity</li>
-                            <li>Custom business logic</li>
-                            <li>Integration with other OTIMI products</li>
-                        </ul>
-                    </div>
+            <div class="product-content">
+                <div class="product-text">
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>No-code development interface</li>
+                        <li>API connectivity</li>
+                        <li>Custom business logic</li>
+                        <li>Integration with other OTIMI products</li>
+                    </ul>
                     
                     <a href="contact.html" class="btn btn-primary">Explore Solutions</a>
+                </div>
+                <div class="product-image">
+                    <img src="assets/img/custom-solutions.webp" alt="CustomForge Platform">
                 </div>
             </div>
         </div>
