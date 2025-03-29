@@ -1,5 +1,5 @@
 /* 
- * Products Page Specific CSS for OTIMI Source Website
+ * Products Page Specific CSS for OTIMI Source Website - Fixed image containers with vertical centering
  */
 
 /* Products Section */
@@ -23,7 +23,7 @@
     margin-right: auto;
 }
 
-/* Product Card Styles */
+/* Product Card Styles - Fixed flexbox layout */
 .product-card {
     background-color: white;
     border-radius: 10px;
@@ -35,19 +35,49 @@
     flex-direction: column;
 }
 
-/* Image Styles - Full-width stretched images with controlled height */
+/* Make product card a flexbox row on desktop and column on mobile */
+@media screen and (min-width: 900px) {
+    .product-card {
+        flex-direction: row;
+        align-items: center; /* This centers the content vertically */
+    }
+}
+
+/* Product image styling for mobile */
 .product-img {
     width: 100%;
     display: block;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    max-height: 250px; /* Reduced height */
+    max-height: 250px;
     object-fit: cover;
+}
+
+/* Fixed product image container for desktop - vertically centered */
+@media screen and (min-width: 900px) {
+    .product-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Center items vertically */
+    }
+    
+    .product-img {
+        width: 300px;
+        height: 100%; 
+        max-height: 300px; /* Fixed height for consistency */
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+        object-fit: cover;
+        flex-shrink: 0; /* Prevent image from shrinking */
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
 }
 
 /* Content Styles */
 .product-content {
     padding: 1.8rem;
+    flex: 1;
 }
 
 .product-content h3 {
@@ -143,7 +173,7 @@
     }
     
     .product-img {
-        max-height: 180px;
+        max-height: 200px;
     }
     
     .product-content {

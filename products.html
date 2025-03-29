@@ -5,30 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products & Solutions - OTIMI Source</title>
     <meta name="description" content="Explore OTIMI Source's AI-powered business solutions including Enterprise AI Platform, IntelliForce AI, WorkforceOS, and industry-specific applications.">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/css/base.css" as="style">
+    <link rel="preload" href="assets/css/products.css" as="style">
+    
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/products.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo-container">
-                <img src="assets/img/logo.webp" alt="OTIMI Source Logo" class="logo">
-                <div class="brand-info">
-                    <span class="brand-name"><span class="brand-otimi">OTIMI</span> <span class="brand-source">Source</span></span>
-                    <span class="tagline">Innovate . Integrate . Ignite .</span>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products & Solutions</a></li>
-                <li><a href="services.html">Services</a></li>
-                <!-- <li><a href="resources.html">Resources</a></li> -->
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <div class="mobile-menu-btn">☰</div>
-        </nav>
+    <header id="header-container">
+        <!-- Header content will be loaded dynamically -->
     </header>
 
     <section class="page-header">
@@ -42,7 +30,7 @@
             <p class="section-subtitle">OTIMI Source offers a complete suite of products and services customized for today's enterprise challenges.</p>
             
             <div class="product-card" id="enterprise-ai">
-                <img src="assets/img/enterprise-data-integration.webp" alt="Enterprise AI Platform" class="product-img">
+                <img data-src="assets/img/enterprise-data-integration.webp" alt="Enterprise AI Platform" class="product-img" loading="lazy">
                 <div class="product-content">
                     <h3>Enterprise AI & Data Integration Platform</h3>
                     <p>Our Enterprise AI & Data Integration Platform transforms your business by connecting systems, automating processes, and enabling data-driven decisions across industries. We build a strong foundation for your AI initiatives with seamless data flow and clear insights.</p>
@@ -62,15 +50,15 @@
                         <p>Our platform cuts manual work by up to 50%, reduces administrative costs by 10–12%, and delivers real-time insights for smarter decisions.</p>
                     </div>
                     
-                    <a href="contact.html" class="btn btn-primary">Request a Demo</a>
+                    <a href="contact.html" class="btn btn-primary">Request Information</a>
                 </div>
             </div>
             
             <div class="product-card" id="intelliforce">
-                <img src="assets/img/intelliforce-ai.webp" alt="IntelliForce AI" class="product-img">
+                <img data-src="assets/img/intelliforce-ai.webp" alt="IntelliForce AI" class="product-img" loading="lazy">
                 <div class="product-content">
                     <h3>IntelliForce AI</h3>
-                    <p>In today's fast-paced digital landscape, businesses need agile and scalable AI solutions to stay competitive. That's why OTIMI Source offers IntelliForce AI, a comprehensive suite of Service as Software (SaaS) offerings that put the power of AI automation directly into your hands. Industry reports indicate a significant shift towards AI-powered automation, with agents driving a new era of efficiency. IntelliForce AI is designed to help you capitalize on this trend, providing cloud-based, subscription-model AI solutions that are scalable, accessible, and easy to deploy.</p>
+                    <p>In today's fast-paced digital landscape, businesses need agile and scalable AI solutions to stay competitive. That's why OTIMI Source offers IntelliForce AI, a comprehensive suite of Service as Software (SaaS) offerings that put the power of AI automation directly into your hands.</p>
                     
                     <div class="product-features">
                         <h4>Benefits:</h4>
@@ -79,18 +67,6 @@
                             <li><strong>Accessibility:</strong> Access your AI solutions from anywhere, at any time, empowering your teams with the tools they need, wherever they are</li>
                             <li><strong>Ease of Deployment:</strong> Rapidly deploy and integrate AI solutions without complex infrastructure requirements, minimizing downtime and accelerating time-to-value</li>
                             <li><strong>Cost-Effectiveness:</strong> Reduce upfront investment and ongoing maintenance costs with a subscription model, allowing you to focus your resources on strategic initiatives</li>
-                            <li><strong>AI Agent Driven Automation:</strong> Implement AI agents that can handle routine tasks, and improve overall workflows, as the industry is moving towards</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-solutions">
-                        <h4>SaaS Solutions Offered:</h4>
-                        <ul>
-                            <li>AI-powered customer service chatbots: Enhance customer engagement and provide 24/7 support with intelligent chatbots that understand and respond to customer inquiries</li>
-                            <li>Predictive maintenance platforms for industrial equipment: Minimize downtime and optimize equipment performance with AI-driven predictive maintenance solutions</li>
-                            <li>Fraud detection and prevention tools: Protect your business from financial losses with advanced AI algorithms that detect and prevent fraudulent activities</li>
-                            <li>AI-driven sales and marketing automation: Improve lead generation, personalize customer experiences, and optimize marketing campaigns with AI-powered automation tools</li>
-                            <li>AI driven process automation agents: Automate repetitive tasks within your business, from data entry to complex workflow management</li>
                         </ul>
                     </div>
                     
@@ -99,7 +75,7 @@
             </div>
             
             <div class="product-card" id="workforceos">
-                <img src="assets/img/work-force.webp" alt="WorkforceOS Platform" class="product-img">
+                <img data-src="assets/img/work-force.webp" alt="WorkforceOS Platform" class="product-img" loading="lazy">
                 <div class="product-content">
                     <h3>WorkforceOS™</h3>
                     <p>Our flagship intelligent talent platform revolutionizes how organizations manage, develop, and optimize their workforce through AI-powered insights and automation.</p>
@@ -119,7 +95,7 @@
             </div>
             
             <div class="product-card" id="customforge">
-                <img src="assets/img/custom-solutions.webp" alt="CustomForge Platform" class="product-img">
+                <img data-src="assets/img/custom-solutions.webp" alt="CustomForge Platform" class="product-img" loading="lazy">
                 <div class="product-content">
                     <h3>CustomForge™</h3>
                     <p>Development platform for custom business applications, enabling organizations to create tailored solutions for their unique requirements.</p>
@@ -211,7 +187,7 @@
                 <h4>Contact Us</h4>
                 <ul>
                     <li>info@otimisource.co</li>
-                    <li>linkedin.com/in/otimisource</li>
+                    <li><a href="https:///www.linkedin.com/company/otimisource" target="_blank"> linkedin.com/company/otimisource </a></li>
                 </ul>
             </div>
         </div>
@@ -221,6 +197,6 @@
     </footer>
 
     <!-- Scripts at the end of body for better page load performance -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

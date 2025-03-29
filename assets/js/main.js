@@ -1,15 +1,45 @@
 /**
- * Main JavaScript file for OTIMI Source website - Optimized for performance
+ * Main JavaScript file for OTIMI Source website
  */
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Load common header
+    loadHeader();
+    
     // Initialize all functionality
     initMobileMenu();
     highlightCurrentPage();
     initTabSystem();
     initSmoothScrolling();
+    initLazyLoading();
 });
+
+/**
+ * Load common header from header.html in the root directory
+ */
+function loadHeader() {
+    const headerContainer = document.getElementById('header-container');
+    if (!headerContainer) return;
+    
+    // Try to load the header
+    fetch('header.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load header');
+            }
+            return response.text();
+        })
+        .then(data => {
+            headerContainer.innerHTML = data;
+            highlightCurrentPage(); // Highlight again after header loads
+            initMobileMenu(); // Initialize mobile menu after header loads
+        })
+        .catch(error => {
+            console.warn('Error loading header:', error);
+            // Don't replace the header container if loading fails
+        });
+}
 
 /**
  * Mobile menu functionality
@@ -176,4 +206,60 @@ function initSmoothScrolling() {
             }
         });
     });
+}
+
+/**
+ * Initialize lazy loading for images
+ */
+function initLazyLoading() {
+    // Check if there are any images with data-src attribute
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    
+    if (!lazyImages.length) return;
+    
+    // Use Intersection Observer if available
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => {
+            imageObserver.observe(img);
+        });
+    } else {
+        // Fallback for browsers without Intersection Observer
+        function lazyLoad() {
+            lazyImages.forEach(img => {
+                if (img.getBoundingClientRect().top <= window.innerHeight && 
+                    img.getBoundingClientRect().bottom >= 0 && 
+                    getComputedStyle(img).display !== "none") {
+                    
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+            });
+            
+            // If all images have been loaded, stop checking
+            if (lazyImages.length === 0) {
+                document.removeEventListener('scroll', lazyLoad);
+                window.removeEventListener('resize', lazyLoad);
+                window.removeEventListener('orientationChange', lazyLoad);
+            }
+        }
+        
+        // Call once to check for images already in view
+        lazyLoad();
+        
+        // Add event listeners to check when more images come into view
+        document.addEventListener('scroll', lazyLoad);
+        window.addEventListener('resize', lazyLoad);
+        window.addEventListener('orientationChange', lazyLoad);
+    }
 }
