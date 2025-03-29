@@ -1,23 +1,19 @@
 /* 
  * Home Page Specific CSS for OTIMI Source Website
- * Updated with performance optimizations
+ * Updated with reduced section spacing
  */
 
-/* Logo improvements */
-
-
-/* Hero Section with right-aligned content */
+/* Hero Section with RIGHT-aligned content */
 .hero {
     position: relative;
     color: var(--light-text);
-    padding: 4rem 5% 2rem;
+    padding: 3rem 5% 1.5rem; /* Reduced padding */
     margin-top: 60px;
-    min-height: 400px; /* Reduced height from 500px */
+    min-height: 350px; /* Reduced height */
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Align content to the right */
+    justify-content: flex-end !important; /* Force right alignment */
     overflow: hidden;
-    will-change: transform; /* Optimize compositing */
 }
 
 .hero-background-img {
@@ -28,10 +24,9 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    will-change: transform; /* Optimize for GPU acceleration */
 }
 
-/* Dark overlay optimized for performance */
+/* Dark overlay */
 .hero::after {
     content: '';
     position: absolute;
@@ -39,280 +34,466 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(29, 53, 95, 0.6); /* Semi-transparent dark blue */
+    background: rgba(29, 53, 95, 0.7);
     z-index: 1;
-    pointer-events: none; /* Reduce layer complexity */
+    pointer-events: none;
 }
 
 .hero-content {
-    max-width: 500px; /* Reduced width for right side alignment */
-    margin-right: 1%; /* Add space from right edge */
+    max-width: 500px;
+    margin-right: 5%;
     position: relative;
     z-index: 2;
-    text-align: left; /* Right align the text */
+    text-align: left !important; /* Force left text alignment */
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Ensure content is right-aligned */
-}
-
-.hero-content-tagline {
-    max-width: 500px; /* Reduced width for right side alignment */
-    margin-right: 1%; /* Add space from right edge */
-    position: relative;
-    z-index: 2;
-    text-align: center; /* Right align the text */
-    display: flex;
-    flex-direction: column;
+    align-items: flex-start !important; /* Force left alignment of items */
 }
 
 .hero h1 {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
+    font-size: 2.6rem; /* Slightly reduced */
+    margin-bottom: 0.5rem; /* Reduced margin */
     color: var(--light-text);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
+    text-align: left !important; /* Force left alignment of heading */
 }
 
 .hero p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem; /* Slightly reduced */
+    margin-bottom: 1rem; /* Reduced margin */
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+    text-align: left !important; /* Force left alignment of paragraph */
 }
 
-/* Features Section - Optimized animations */
-.features {
-    padding: 3rem 5%;
+/* Introduction Text Section */
+.intro-text {
+    padding: 1.5rem 5%; /* Reduced padding */
+    background-color: white;
+    text-align: center;
+}
+
+.intro-text p {
+    font-size: 1.1rem; /* Slightly reduced */
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--medium-text);
+    line-height: 1.5; /* Reduced line height */
+}
+
+/* What We Do Section */
+.what-we-do {
+    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    background-color: var(--light-bg);
+}
+
+.what-we-do-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.what-we-do-content p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem; /* Reduced margin */
+    text-align: center;
+}
+
+/* Section title with reduced margins */
+.section-title {
+    text-align: center;
+    margin-bottom: 1.5rem; /* Reduced margin */
+    font-size: 1.7rem; /* Slightly reduced */
+    color: var(--primary-blue);
+    position: relative;
+    padding-bottom: 0.8rem; /* Reduced padding */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Approach Section - Reduced spacing */
+.approach {
+    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    background-color: white;
+}
+
+.approach-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 1.5rem; /* Reduced margin */
+    font-size: 1.1rem;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.2rem; /* Reduced gap */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+.approach-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.2rem; /* Reduced padding */
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
-.feature-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
-    transform: translateZ(0); /* Force GPU acceleration */
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.approach-card:hover {
+    transform: translateY(-5px);
 }
 
-.feature-card:hover {
-    transform: translateY(-5px) translateZ(0);
-}
-
-.feature-icon {
+.approach-icon {
+    font-size: 1.8rem; /* Slightly reduced */
+    color: var(--accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
-    background-color: var(--light-accent);
+    min-width: 45px; /* Reduced size */
+    height: 45px; /* Reduced size */
+    margin-right: 15px; /* Reduced margin */
+    flex-shrink: 0;
+}
+
+.approach-content {
+    flex: 1;
+}
+
+.approach-content h3 {
+    margin-bottom: 0.3rem; /* Reduced margin */
     color: var(--primary-blue);
-    font-size: 2rem;
+    font-size: 1.1rem; /* Reduced size */
 }
 
-.feature-content {
-    padding: 1.2rem;
+.approach-content p {
+    margin-bottom: 0; /* Remove margin */
+    font-size: 0.95rem; /* Reduced size */
 }
 
-.feature-content h3 {
-    color: var(--primary-blue);
-    margin-bottom: 0.8rem;
-}
-
-/* Explore Our Offerings Section */
-.explore-offerings {
-    padding: 3rem 5%;
+/* Why Trust Us Section - Reduced spacing */
+.why-trust {
+    padding: 2rem 5% 1.5rem; /* Reduced padding */
     background-color: var(--light-bg);
-    position: relative;
 }
 
-.explore-offerings::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(to right, var(--accent-color), var(--primary-blue));
-}
-
-.offerings-grid {
+.trust-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.offering-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.offering-card h3 {
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.offering-card p {
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.offering-card .btn {
-    align-self: flex-start;
-    margin-top: auto;
-}
-
-/* Testimonials Section */
-.testimonials {
-    background-color: var(--primary-blue);
-    color: var(--light-text);
-    padding: 3rem 0;
-    position: relative;
-}
-
-.testimonials::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(29, 53, 95, 0.85), rgba(29, 53, 95, 0.95));
-    z-index: 0;
-}
-
-.testimonials-container {
+    gap: 1.2rem; /* Reduced gap */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 5%;
+}
+
+.trust-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.2rem; /* Reduced padding */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    height: 100%;
+}
+
+.trust-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.7rem; /* Reduced margin */
+    font-size: 1.1rem; /* Reduced size */
+}
+
+/* Check List Styling - Reduced spacing */
+.check-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: 1.6rem; /* Reduced padding */
+    margin-bottom: 0.6rem; /* Reduced margin */
+    line-height: 1.3; /* Reduced line height */
+    font-size: 0.95rem; /* Reduced font size */
+}
+
+.check-list li:before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Results Section - Reduced spacing */
+.results {
+    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    background-color: var(--primary-blue);
+    color: var(--light-text);
+}
+
+.results .section-title {
+    color: var(--light-text);
+}
+
+.results .section-title::after {
+    background-color: var(--light-text);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem; /* Reduced gap */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.result-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.2rem; /* Reduced padding */
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.result-icon {
+    font-size: 1.8rem; /* Reduced size */
+    margin-bottom: 0.7rem; /* Reduced margin */
+    color: white;
+}
+
+.result-card p {
+    color: var(--light-text);
+    font-weight: 500;
+    font-size: 1rem; /* Reduced size */
+    margin: 0;
+}
+
+/* How We Work Section - Reduced spacing */
+.how-we-work {
+    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    background-color: white;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem; /* Reduced gap */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.2rem; /* Reduced padding */
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.step-icon {
+    font-size: 1.5rem; /* Reduced size */
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px; /* Reduced size */
+    height: 40px; /* Reduced size */
+    margin-right: 15px; /* Reduced margin */
+    background-color: rgba(39, 68, 126, 0.1);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    margin-bottom: 0.3rem; /* Reduced margin */
+    color: var(--primary-blue);
+    font-size: 1.1rem; /* Reduced size */
+}
+
+.step-content p {
+    margin-bottom: 0; /* Remove margin */
+    font-size: 0.95rem; /* Reduced size */
+}
+
+/* Solutions Section - Reduced spacing */
+.solutions {
+    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    background-color: var(--light-bg);
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.2rem; /* Reduced gap */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.solution-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.2rem; /* Reduced padding */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+}
+
+.solution-icon {
+    font-size: 1.8rem; /* Reduced size */
+    color: var(--accent-color);
+    margin-right: 15px; /* Reduced margin */
+    flex-shrink: 0;
+}
+
+.solution-content {
+    flex: 1;
+}
+
+.solution-content h3 {
+    margin-bottom: 0.3rem; /* Reduced margin */
+    color: var(--primary-blue);
+    font-size: 1.1rem; /* Reduced size */
+}
+
+.solution-content p {
+    margin-bottom: 0.5rem; /* Reduced margin */
+    font-size: 0.95rem; /* Reduced size */
+}
+
+/* CTA Section Updates - Reduced spacing */
+.cta {
+    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    text-align: center;
+    background-color: var(--light-bg);
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta h2 {
+    color: var(--primary-blue);
+    margin-bottom: 0.7rem; /* Reduced margin */
+    font-size: 1.7rem; /* Reduced size */
     position: relative;
     z-index: 1;
 }
 
-.testimonials .section-title {
-    color: var(--light-text);
-    margin-bottom: 2rem;
+.cta p {
+    margin-bottom: 1.2rem; /* Reduced margin */
+    position: relative;
+    z-index: 1;
+    font-size: 1rem; /* Reduced size */
 }
 
-.testimonials .section-title::after {
-    background-color: var(--light-text);
+.cta-benefits {
+    max-width: 500px;
+    margin: 0 auto 1.5rem; /* Reduced margin */
+    text-align: left;
 }
 
-.testimonial-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+.cta-benefits li {
+    margin-bottom: 0.4rem; /* Reduced margin */
 }
 
-.testimonial-card {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 1.5rem;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transform: translateZ(0); /* Force GPU acceleration */
+.cta .btn {
+    position: relative;
+    z-index: 1;
 }
 
-.testimonial-text {
-    font-style: italic;
-    margin-bottom: 1.2rem;
-    line-height: 1.6;
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 1.05rem;
-}
-
-.testimonial-author {
-    font-weight: 600;
-    color: #ffffff;
-    font-size: 0.95rem;
-}
-
-/* Responsive design for home page */
+/* Responsive design updates */
 @media screen and (max-width: 768px) {
-    .logo {
-        width: 50px; /* Still larger than default but adjusted for mobile */
-    }
-    
-    .brand-name {
-        font-size: 1.4rem; /* Slightly smaller on mobile but still visible */
-    }
-
     .hero {
-        padding: 3rem 5% 2rem;
-        min-height: 250px; /* Significantly reduced height on mobile */
-        justify-content: center; /* Center on mobile */
+        justify-content: center !important; /* Force center on mobile */
+        min-height: 300px; /* Reduced height on mobile */
     }
     
     .hero-content {
-        margin-right: 0; /* Remove right margin on mobile */
-        text-align: center; /* Center text on mobile */
-        align-items: center; /* Center align items on mobile */
+        margin-right: 0;
+        text-align: center !important; /* Force center text on mobile */
+        align-items: center !important; /* Force center items on mobile */
+    }
+    
+    .hero h1, .hero p {
+        text-align: center !important; /* Force center text on mobile */
     }
     
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Reduced size on mobile */
     }
     
-    .solution-tabs {
+    .hero p {
+        font-size: 1rem; /* Reduced size on mobile */
+    }
+    
+    .approach-grid, 
+    .trust-grid, 
+    .results-grid, 
+    .steps-container, 
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .solution-card {
         flex-direction: column;
-        align-items: center;
     }
     
-    .tab-btn {
-        margin-bottom: 0.8rem;
-        width: 80%;
-        text-align: center;
-    }
-    
-    .testimonial-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .offerings-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .offering-card {
-        margin-bottom: 1.5rem;
-    }
-
-    .offering-card .btn {
-        width: 100%;
-        text-align: center;
+    .solution-icon {
+        margin-bottom: 0.8rem; /* Reduced margin */
+        margin-right: 0;
     }
 }
 
 @media screen and (max-width: 480px) {
     .hero {
-        padding: 2.5rem 5% 1.5rem;
-        min-height: 200px; /* Further reduced height for small mobile devices */
+        min-height: 250px; /* Further reduced height on small mobile */
+        padding: 2.5rem 5% 1rem; /* Reduced padding */
     }
     
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem; /* Reduced size on small mobile */
     }
     
     .hero p {
-        font-size: 1rem;
+        font-size: 0.95rem; /* Reduced size on small mobile */
     }
     
-    .features-grid {
-        grid-template-columns: 1fr;
+    .intro-text p {
+        font-size: 0.95rem; /* Reduced size on small mobile */
+    }
+    
+    .approach-card,
+    .step-card {
+        flex-direction: column;
+    }
+    
+    .approach-icon,
+    .step-icon {
+        margin-bottom: 0.8rem; /* Reduced margin */
+        margin-right: 0;
     }
 }
