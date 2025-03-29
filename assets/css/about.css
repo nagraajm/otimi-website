@@ -115,6 +115,106 @@
     background-color: var(--accent-color);
 }
 
+/* Why OTIMI Section Styling - Updated to match Core Values style */
+.why-otimi-section {
+    padding: 4rem 5%;
+    background-color: var(--light-bg);
+    position: relative;
+}
+
+.why-otimi-section .section-title {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.why-otimi-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.why-otimi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.why-otimi-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-otimi-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.why-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #01BBD4; /* Same as the value cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.why-icon i {
+    color: white;
+    font-size: 2.2rem;
+}
+
+.why-otimi-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.why-otimi-card p {
+    color: var(--medium-text);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.otimi-evolution {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.otimi-evolution p {
+    text-align: center;
+    font-size: 1.05rem;
+    color: var(--medium-text);
+    line-height: 1.6;
+}
+
 /* Team Section */
 .team-section {
     padding: 3rem 5%;
@@ -227,6 +327,26 @@
     background: linear-gradient(to right, var(--primary-blue), var(--accent-color));
 }
 
+.values-section .section-title {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.values-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -269,9 +389,28 @@
     filter: brightness(0) invert(1);
 }
 
+.value-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
 .value-card h3 {
     color: var(--primary-blue);
     margin-bottom: 0.8rem;
+}
+
+/* Full width value card for the evolution text */
+.value-card.full-width {
+    grid-column: 1 / -1;
+    margin-top: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.value-card.full-width p {
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 /* Approach Section - With optimized icon sizing */
@@ -365,16 +504,145 @@
     .about-us-founders {
         grid-template-columns: 1fr;
     }
+
+    .why-otimi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 768px) {
     .values-grid, .approach-grid {
         grid-template-columns: 1fr 1fr;
     }
+
+    .why-otimi-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .values-grid, .approach-grid {
         grid-template-columns: 1fr;
+    }
+
+    .why-otimi-card {
+        padding: 1.5rem;
+    }
+
+    .why-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 1.8rem;
+    }
+}
+
+/* Service Process - Updated with icon styling */
+.service-process {
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-process .section-title {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.service-process .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.process-step:hover {
+    transform: translateY(-8px);
+}
+
+/* Step icon styling (merged with values-icon styling) */
+.step-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #01BBD4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+}
+
+.step-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.process-step h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.process-step p {
+    color: var(--medium-text);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Full width for the bottom card */
+.process-step.full-width {
+    flex-basis: 100%;
+    margin-top: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.process-step.full-width p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+    .process-steps {
+        flex-direction: column;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .process-step {
+        min-width: 100%;
     }
 }

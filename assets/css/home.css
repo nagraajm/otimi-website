@@ -125,14 +125,14 @@
     margin-bottom: 0.8rem;
 }
 
-/* Solutions Section */
-.solutions {
+/* Explore Our Offerings Section */
+.explore-offerings {
     padding: 3rem 5%;
     background-color: var(--light-bg);
     position: relative;
 }
 
-.solutions::before {
+.explore-offerings::before {
     content: '';
     position: absolute;
     top: 0;
@@ -142,57 +142,38 @@
     background: linear-gradient(to right, var(--accent-color), var(--primary-blue));
 }
 
-.solutions-container {
-    max-width: 1000px;
-    margin: 0 auto;
+.offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-.solution-tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.tab-btn {
-    padding: 0.6rem 1.2rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    margin: 0 0.5rem 0.5rem;
-}
-
-.tab-btn:hover {
-    color: var(--accent-color);
-}
-
-.tab-btn.active {
-    color: var(--accent-color);
-    border-bottom-color: var(--accent-color);
-}
-
-.solution-content {
+.offering-card {
     background-color: white;
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.solution-content h3 {
-    margin-bottom: 1rem;
+.offering-card h3 {
     color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
 }
 
-.solution-content ul {
-    margin-bottom: 1.2rem;
+.offering-card p {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
-.solution-content li {
-    margin-bottom: 0.5rem;
+.offering-card .btn {
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 /* Testimonials Section */
@@ -301,6 +282,19 @@
     
     .testimonial-cards {
         grid-template-columns: 1fr;
+    }
+
+    .offerings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offering-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .offering-card .btn {
+        width: 100%;
+        text-align: center;
     }
 }
 
