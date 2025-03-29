@@ -1,6 +1,6 @@
 /* 
  * Home Page Specific CSS for OTIMI Source Website
- * Updated with reduced section spacing
+ * Updated with reduced section spacing and embedded intro text
  */
 
 /* Hero Section with RIGHT-aligned content */
@@ -9,7 +9,7 @@
     color: var(--light-text);
     padding: 3rem 5% 1.5rem; /* Reduced padding */
     margin-top: 60px;
-    min-height: 350px; /* Reduced height */
+    min-height: 400px; /* Increased slightly for additional text */
     display: flex;
     align-items: center;
     justify-content: flex-end !important; /* Force right alignment */
@@ -34,13 +34,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(29, 53, 95, 0.7);
+    background: rgba(29, 53, 95, 0.75); /* Slightly darker overlay for better text readability */
     z-index: 1;
     pointer-events: none;
 }
 
 .hero-content {
-    max-width: 500px;
+    max-width: 550px; /* Slightly wider to accommodate more text */
     margin-right: 5%;
     position: relative;
     z-index: 2;
@@ -51,35 +51,28 @@
 }
 
 .hero h1 {
-    font-size: 2.6rem; /* Slightly reduced */
-    margin-bottom: 0.5rem; /* Reduced margin */
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
     color: var(--light-text);
     font-weight: 700;
     line-height: 1.2;
     text-align: left !important; /* Force left alignment of heading */
 }
 
-.hero p {
-    font-size: 1.2rem; /* Slightly reduced */
-    margin-bottom: 1rem; /* Reduced margin */
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
     color: rgba(255, 255, 255, 0.95);
     font-weight: 500;
     text-align: left !important; /* Force left alignment of paragraph */
 }
 
-/* Introduction Text Section */
-.intro-text {
-    padding: 1.5rem 5%; /* Reduced padding */
-    background-color: white;
-    text-align: center;
-}
-
-.intro-text p {
-    font-size: 1.1rem; /* Slightly reduced */
-    max-width: 900px;
-    margin: 0 auto;
-    color: var(--medium-text);
-    line-height: 1.5; /* Reduced line height */
+.hero-intro {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0.5rem;
+    text-align: left !important;
 }
 
 /* What We Do Section */
@@ -268,7 +261,7 @@
 .result-icon {
     font-size: 1.8rem; /* Reduced size */
     margin-bottom: 0.7rem; /* Reduced margin */
-    color: white;
+    color: white; /* Plain white color */
 }
 
 .result-card p {
@@ -429,25 +422,32 @@
 @media screen and (max-width: 768px) {
     .hero {
         justify-content: center !important; /* Force center on mobile */
-        min-height: 300px; /* Reduced height on mobile */
+        min-height: 450px; /* Increased for additional text on mobile */
+        padding: 3rem 7% 2rem; /* Increased side padding on mobile */
     }
     
     .hero-content {
         margin-right: 0;
         text-align: center !important; /* Force center text on mobile */
         align-items: center !important; /* Force center items on mobile */
+        max-width: 90%; /* Wider on mobile */
     }
     
-    .hero h1, .hero p {
+    .hero h1, .hero-subtitle, .hero-intro {
         text-align: center !important; /* Force center text on mobile */
     }
     
     .hero h1 {
-        font-size: 2rem; /* Reduced size on mobile */
+        font-size: 2.2rem;
     }
     
-    .hero p {
-        font-size: 1rem; /* Reduced size on mobile */
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-intro {
+        font-size: 0.95rem;
+        line-height: 1.4;
     }
     
     .approach-grid, 
@@ -470,20 +470,25 @@
 
 @media screen and (max-width: 480px) {
     .hero {
-        min-height: 250px; /* Further reduced height on small mobile */
-        padding: 2.5rem 5% 1rem; /* Reduced padding */
+        min-height: 480px; /* Further increased for small screens */
+        padding: 2.5rem 5% 1.5rem;
     }
     
     .hero h1 {
-        font-size: 1.7rem; /* Reduced size on small mobile */
+        font-size: 1.8rem;
     }
     
-    .hero p {
-        font-size: 0.95rem; /* Reduced size on small mobile */
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-intro {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
     
     .intro-text p {
-        font-size: 0.95rem; /* Reduced size on small mobile */
+        font-size: 0.95rem;
     }
     
     .approach-card,
