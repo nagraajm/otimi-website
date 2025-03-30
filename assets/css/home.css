@@ -73,23 +73,91 @@
     color: rgba(255, 255, 255, 0.9);
     margin-top: 0.5rem;
     text-align: left !important;
+    font-weight: normal; /* Making the text regular font weight, not bold */
 }
 
-/* What We Do Section */
-.what-we-do {
-    padding: 2rem 5% 1.5rem; /* Reduced padding */
+/* Tabs Container */
+.tabs-container {
+    padding: 2rem 5% 1.5rem;
     background-color: var(--light-bg);
 }
 
-.what-we-do-content {
-    max-width: 800px;
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--primary-blue);
+}
+
+.tab-btn.active {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.tab-content {
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.what-we-do-content p {
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Content title - left aligned */
+.content-title {
+    text-align: left;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
     font-size: 1.1rem;
-    margin-bottom: 0.8rem; /* Reduced margin */
-    text-align: center;
+}
+
+/* Bullet list - replaces check-list */
+.bullet-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.bullet-list li {
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+    font-size: 0.95rem;
 }
 
 /* Section title with reduced margins */
@@ -113,23 +181,17 @@
     background-color: var(--accent-color);
 }
 
-/* Approach Section - Reduced spacing */
-.approach {
-    padding: 2rem 5% 1.5rem; /* Reduced padding */
-    background-color: white;
-}
-
-.approach-intro {
-    text-align: center;
+/* What We Do Tab Content */
+.what-we-do-content {
     max-width: 800px;
-    margin: 0 auto 1.5rem; /* Reduced margin */
-    font-size: 1.1rem;
+    margin: 0 auto;
 }
 
+/* Approach Tab Content */
 .approach-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.2rem; /* Reduced gap */
+    gap: 1.2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -137,7 +199,7 @@
 .approach-card {
     display: flex;
     align-items: flex-start;
-    padding: 1.2rem; /* Reduced padding */
+    padding: 1.2rem;
     background-color: var(--light-bg);
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
@@ -149,14 +211,14 @@
 }
 
 .approach-icon {
-    font-size: 1.8rem; /* Slightly reduced */
+    font-size: 1.8rem;
     color: var(--accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 45px; /* Reduced size */
-    height: 45px; /* Reduced size */
-    margin-right: 15px; /* Reduced margin */
+    min-width: 45px;
+    height: 45px;
+    margin-right: 15px;
     flex-shrink: 0;
 }
 
@@ -164,27 +226,11 @@
     flex: 1;
 }
 
-.approach-content h3 {
-    margin-bottom: 0.3rem; /* Reduced margin */
-    color: var(--primary-blue);
-    font-size: 1.1rem; /* Reduced size */
-}
-
-.approach-content p {
-    margin-bottom: 0; /* Remove margin */
-    font-size: 0.95rem; /* Reduced size */
-}
-
-/* Why Trust Us Section - Reduced spacing */
-.why-trust {
-    padding: 2rem 5% 1.5rem; /* Reduced padding */
-    background-color: var(--light-bg);
-}
-
+/* Trust Tab Content */
 .trust-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.2rem; /* Reduced gap */
+    gap: 1.2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -192,43 +238,15 @@
 .trust-card {
     background-color: white;
     border-radius: 8px;
-    padding: 1.2rem; /* Reduced padding */
+    padding: 1.2rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border-color);
     height: 100%;
 }
 
-.trust-card h3 {
-    color: var(--primary-blue);
-    margin-bottom: 0.7rem; /* Reduced margin */
-    font-size: 1.1rem; /* Reduced size */
-}
-
-/* Check List Styling - Reduced spacing */
-.check-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.check-list li {
-    position: relative;
-    padding-left: 1.6rem; /* Reduced padding */
-    margin-bottom: 0.6rem; /* Reduced margin */
-    line-height: 1.3; /* Reduced line height */
-    font-size: 0.95rem; /* Reduced font size */
-}
-
-.check-list li:before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
-}
-
-/* Results Section - Reduced spacing */
+/* Results Section - Removed icons */
 .results {
-    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    padding: 2rem 5% 1.5rem;
     background-color: var(--primary-blue);
     color: var(--light-text);
 }
@@ -244,7 +262,7 @@
 .results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.2rem; /* Reduced gap */
+    gap: 1.2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -252,35 +270,32 @@
 .result-card {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    padding: 1.2rem; /* Reduced padding */
+    padding: 1.2rem;
     text-align: center;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.result-icon {
-    font-size: 1.8rem; /* Reduced size */
-    margin-bottom: 0.7rem; /* Reduced margin */
-    color: white; /* Plain white color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .result-card p {
     color: var(--light-text);
     font-weight: 500;
-    font-size: 1rem; /* Reduced size */
+    font-size: 1.1rem;
     margin: 0;
 }
 
-/* How We Work Section - Reduced spacing */
+/* How We Work Section */
 .how-we-work {
-    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    padding: 2rem 5% 1.5rem;
     background-color: white;
 }
 
 .steps-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.2rem; /* Reduced gap */
+    gap: 1.2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -288,21 +303,21 @@
 .step-card {
     display: flex;
     align-items: flex-start;
-    padding: 1.2rem; /* Reduced padding */
+    padding: 1.2rem;
     background-color: var(--light-bg);
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .step-icon {
-    font-size: 1.5rem; /* Reduced size */
+    font-size: 1.5rem;
     color: var(--primary-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 40px; /* Reduced size */
-    height: 40px; /* Reduced size */
-    margin-right: 15px; /* Reduced margin */
+    min-width: 40px;
+    height: 40px;
+    margin-right: 15px;
     background-color: rgba(39, 68, 126, 0.1);
     border-radius: 50%;
     flex-shrink: 0;
@@ -312,27 +327,16 @@
     flex: 1;
 }
 
-.step-content h3 {
-    margin-bottom: 0.3rem; /* Reduced margin */
-    color: var(--primary-blue);
-    font-size: 1.1rem; /* Reduced size */
-}
-
-.step-content p {
-    margin-bottom: 0; /* Remove margin */
-    font-size: 0.95rem; /* Reduced size */
-}
-
-/* Solutions Section - Reduced spacing */
+/* Solutions Section */
 .solutions {
-    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    padding: 2rem 5% 1.5rem;
     background-color: var(--light-bg);
 }
 
 .solutions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.2rem; /* Reduced gap */
+    gap: 1.2rem;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -340,7 +344,7 @@
 .solution-card {
     background-color: white;
     border-radius: 8px;
-    padding: 1.2rem; /* Reduced padding */
+    padding: 1.2rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border-color);
     display: flex;
@@ -348,9 +352,9 @@
 }
 
 .solution-icon {
-    font-size: 1.8rem; /* Reduced size */
+    font-size: 1.8rem;
     color: var(--accent-color);
-    margin-right: 15px; /* Reduced margin */
+    margin-right: 15px;
     flex-shrink: 0;
 }
 
@@ -358,20 +362,9 @@
     flex: 1;
 }
 
-.solution-content h3 {
-    margin-bottom: 0.3rem; /* Reduced margin */
-    color: var(--primary-blue);
-    font-size: 1.1rem; /* Reduced size */
-}
-
-.solution-content p {
-    margin-bottom: 0.5rem; /* Reduced margin */
-    font-size: 0.95rem; /* Reduced size */
-}
-
-/* CTA Section Updates - Reduced spacing */
+/* CTA Section */
 .cta {
-    padding: 2rem 5% 1.5rem; /* Reduced padding */
+    padding: 2rem 5% 1.5rem;
     text-align: center;
     background-color: var(--light-bg);
 }
@@ -380,7 +373,7 @@
     max-width: 800px;
     margin: 0 auto;
     background-color: white;
-    padding: 2rem; /* Reduced padding */
+    padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
     border: 1px solid var(--border-color);
@@ -390,27 +383,23 @@
 
 .cta h2 {
     color: var(--primary-blue);
-    margin-bottom: 0.7rem; /* Reduced margin */
-    font-size: 1.7rem; /* Reduced size */
+    margin-bottom: 0.7rem;
+    font-size: 1.7rem;
     position: relative;
     z-index: 1;
 }
 
 .cta p {
-    margin-bottom: 1.2rem; /* Reduced margin */
+    margin-bottom: 1.2rem;
     position: relative;
     z-index: 1;
-    font-size: 1rem; /* Reduced size */
+    font-size: 1rem;
 }
 
 .cta-benefits {
     max-width: 500px;
-    margin: 0 auto 1.5rem; /* Reduced margin */
+    margin: 0 auto 1.5rem;
     text-align: left;
-}
-
-.cta-benefits li {
-    margin-bottom: 0.4rem; /* Reduced margin */
 }
 
 .cta .btn {
@@ -421,20 +410,20 @@
 /* Responsive design updates */
 @media screen and (max-width: 768px) {
     .hero {
-        justify-content: center !important; /* Force center on mobile */
-        min-height: 450px; /* Increased for additional text on mobile */
-        padding: 3rem 7% 2rem; /* Increased side padding on mobile */
+        justify-content: center !important;
+        min-height: 450px;
+        padding: 3rem 7% 2rem;
     }
     
     .hero-content {
         margin-right: 0;
-        text-align: center !important; /* Force center text on mobile */
-        align-items: center !important; /* Force center items on mobile */
-        max-width: 90%; /* Wider on mobile */
+        text-align: center !important;
+        align-items: center !important;
+        max-width: 90%;
     }
     
     .hero h1, .hero-subtitle, .hero-intro {
-        text-align: center !important; /* Force center text on mobile */
+        text-align: center !important;
     }
     
     .hero h1 {
@@ -450,6 +439,17 @@
         line-height: 1.4;
     }
     
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem;
+    }
+    
     .approach-grid, 
     .trust-grid, 
     .results-grid, 
@@ -463,14 +463,14 @@
     }
     
     .solution-icon {
-        margin-bottom: 0.8rem; /* Reduced margin */
+        margin-bottom: 0.8rem;
         margin-right: 0;
     }
 }
 
 @media screen and (max-width: 480px) {
     .hero {
-        min-height: 480px; /* Further increased for small screens */
+        min-height: 480px;
         padding: 2.5rem 5% 1.5rem;
     }
     
@@ -487,10 +487,6 @@
         line-height: 1.4;
     }
     
-    .intro-text p {
-        font-size: 0.95rem;
-    }
-    
     .approach-card,
     .step-card {
         flex-direction: column;
@@ -498,7 +494,7 @@
     
     .approach-icon,
     .step-icon {
-        margin-bottom: 0.8rem; /* Reduced margin */
+        margin-bottom: 0.8rem;
         margin-right: 0;
     }
 }
