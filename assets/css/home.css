@@ -1,6 +1,6 @@
 /* 
  * Home Page Specific CSS for OTIMI Source Website
- * Updated with reduced section spacing and embedded intro text
+ * Updated with reduced section spacing and card-based layout
  */
 
 /* Hero Section with RIGHT-aligned content */
@@ -51,12 +51,13 @@
 }
 
 .hero h1 {
-    font-size: 2.6rem;
+    font-size: 2rem; /* Further reduced from 2.2rem to fit in single line */
     margin-bottom: 0.5rem;
     color: var(--light-text);
     font-weight: 700;
     line-height: 1.2;
     text-align: left !important; /* Force left alignment of heading */
+    white-space: nowrap; /* Ensure text stays on one line */
 }
 
 .hero-subtitle {
@@ -72,7 +73,7 @@
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
     margin-top: 0.5rem;
-    text-align: left !important;
+    text-align: justify !important; /* Justified text for better readability */
     font-weight: normal; /* Making the text regular font weight, not bold */
 }
 
@@ -153,6 +154,7 @@
     list-style: disc;
     padding-left: 1.5rem;
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 .bullet-list li {
@@ -182,67 +184,75 @@
     background-color: var(--accent-color);
 }
 
-/* What We Do Tab Content */
-.what-we-do-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Approach Tab Content */
-.approach-grid {
+/* Card Grid for tabbed sections */
+.card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.approach-card {
-    display: flex;
-    align-items: flex-start;
-    padding: 1.2rem;
-    background-color: var(--light-bg);
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+/* Feature Card styling similar to about.html */
+.feature-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
     transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.approach-card:hover {
-    transform: translateY(-5px);
+.feature-card:hover {
+    transform: translateY(-8px);
 }
 
-.approach-icon {
-    font-size: 1.8rem;
-    color: var(--accent-color);
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #01BBD4;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 45px;
-    height: 45px;
-    margin-right: 15px;
-    flex-shrink: 0;
+    margin: 0 auto 1.2rem;
+    overflow: hidden;
 }
 
-.approach-content {
+.feature-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.feature-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Trust Tab Content */
-.trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.2rem;
+.feature-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.feature-content p {
+    color: var(--medium-text);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* What We Do Tab Content */
+.what-we-do-content {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.trust-card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 1.2rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
-    height: 100%;
 }
 
 /* Results Section - Removed icons */
@@ -302,30 +312,52 @@
 }
 
 .step-card {
-    display: flex;
-    align-items: flex-start;
-    padding: 1.2rem;
     background-color: var(--light-bg);
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
 }
 
 .step-icon {
-    font-size: 1.5rem;
-    color: var(--primary-blue);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #01BBD4;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 40px;
+    margin: 0 auto 1.2rem;
+    overflow: hidden;
+}
+
+.step-icon img {
+    width: 40px;
     height: 40px;
-    margin-right: 15px;
-    background-color: rgba(39, 68, 126, 0.1);
-    border-radius: 50%;
-    flex-shrink: 0;
+    object-fit: contain;
 }
 
 .step-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.step-content p {
+    width: 100%;
+    text-align: center;
 }
 
 /* Solutions Section */
@@ -344,23 +376,50 @@
 
 .solution-card {
     background-color: white;
-    border-radius: 8px;
-    padding: 1.2rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+    height: 100%;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+}
+
+.solution-card:hover {
+    transform: translateY(-8px);
 }
 
 .solution-icon {
-    font-size: 1.8rem;
-    color: var(--accent-color);
-    margin-right: 15px;
-    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #01BBD4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    overflow: hidden;
+}
+
+.solution-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .solution-content {
     flex: 1;
+    text-align: center;
+}
+
+.solution-content .content-title {
+    text-align: center;
+}
+
+.solution-content .bullet-list {
+    text-align: left;
+    padding-left: 2rem;
 }
 
 /* CTA Section */
@@ -428,7 +487,8 @@
     }
     
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+        white-space: normal; /* Allow text to wrap on small screens */
     }
     
     .hero-subtitle {
@@ -438,6 +498,7 @@
     .hero-intro {
         font-size: 0.95rem;
         line-height: 1.4;
+        text-align: justify !important;
     }
     
     .tabs {
@@ -459,13 +520,16 @@
         grid-template-columns: 1fr;
     }
     
-    .solution-card {
-        flex-direction: column;
+    .card-grid {
+        grid-template-columns: 1fr;
     }
     
-    .solution-icon {
-        margin-bottom: 0.8rem;
-        margin-right: 0;
+    .feature-card,
+    .step-card,
+    .solution-card {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -486,16 +550,5 @@
     .hero-intro {
         font-size: 0.9rem;
         line-height: 1.4;
-    }
-    
-    .approach-card,
-    .step-card {
-        flex-direction: column;
-    }
-    
-    .approach-icon,
-    .step-icon {
-        margin-bottom: 0.8rem;
-        margin-right: 0;
     }
 }

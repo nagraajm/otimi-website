@@ -29,64 +29,35 @@
     gap: 1.5rem;
 }
 
-.service-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-}
-
-.service-icon {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    background-color: var(--light-accent);
-    color: var(--primary-blue);
-}
-
-.service-content {
-    padding: 1.5rem;
-}
-
-.service-content h3 {
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
+/* Service features styling */
 .service-features {
+    text-align: left;
     padding-left: 1.5rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
 }
 
 .service-features li {
     margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.outcome {
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.8rem;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Approach Section */
+.approach-section {
+    padding: 3rem 5%;
+    background-color: var(--light-bg);
 }
 
 /* Staffing Section */
 .staffing-section {
-    background-color: var(--light-bg);
+    background-color: white;
     padding: 3rem 5%;
-}
-
-.staffing-intro {
-    max-width: 1200px;
-    margin: 0 auto 2rem;
-    text-align: center;
-}
-
-.staffing-intro p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--primary-blue);
 }
 
 .staffing-content {
@@ -100,12 +71,13 @@
 
 .staffing-text h3 {
     color: var(--primary-blue);
-    margin: 0 0 1rem;
+    margin: 1.5rem 0 1rem;
     font-size: 1.3rem;
 }
 
 .staffing-text ul {
     padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .staffing-text li {
@@ -180,7 +152,7 @@
     font-size: 1.2rem;
 }
 
-/* Responsive design for services page */
+/* Responsive design */
 @media screen and (max-width: 900px) {
     .staffing-content {
         grid-template-columns: 1fr;

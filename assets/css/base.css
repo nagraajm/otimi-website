@@ -121,7 +121,7 @@ header {
     margin-left: 1px;
 }
 
-.brand-otimi {
+.brand-OTIMI {
     color: inherit;
 }
 
@@ -196,7 +196,7 @@ header {
     font-size: 1.2rem;
 }
 
-/* Buttons */
+/* Buttons - Fixed hover state to maintain text visibility */
 .btn {
     display: inline-block;
     padding: 0.7rem 1.3rem;
@@ -218,6 +218,7 @@ header {
 .btn-primary:hover {
     background-color: var(--accent-hover);
     border-color: var(--accent-hover);
+    color: var(--light-text); /* Ensures text remains visible on hover */
 }
 
 .btn-secondary {
@@ -228,6 +229,7 @@ header {
 
 .btn-secondary:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-text); /* Ensures text remains visible on hover */
 }
 
 /* Section styles */
@@ -376,6 +378,158 @@ footer {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* Standardized Card and Icon Styling */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card, 
+.service-card, 
+.value-card, 
+.approach-card, 
+.step-card, 
+.solution-card,
+.process-step {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-card:hover, 
+.service-card:hover, 
+.value-card:hover, 
+.approach-card:hover, 
+.step-card:hover, 
+.solution-card:hover,
+.process-step:hover {
+    transform: translateY(-8px);
+}
+
+.feature-icon, 
+.service-icon, 
+.value-icon, 
+.approach-icon, 
+.step-icon, 
+.solution-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #01BBD4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    overflow: hidden;
+}
+
+.feature-icon img, 
+.service-icon img, 
+.value-icon img, 
+.approach-icon img, 
+.step-icon img, 
+.solution-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Makes icons white */
+}
+
+.feature-icon i, 
+.service-icon i, 
+.value-icon i, 
+.approach-icon i, 
+.step-icon i, 
+.solution-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.feature-content, 
+.service-content, 
+.value-content, 
+.approach-content, 
+.step-content, 
+.solution-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.feature-content h3, 
+.service-content h3, 
+.value-content h3, 
+.approach-content h3, 
+.step-content h3, 
+.solution-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.feature-content p, 
+.service-content p, 
+.value-content p, 
+.approach-content p, 
+.step-content p, 
+.solution-content p {
+    color: var(--medium-text);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Service features styling */
+.service-features,
+.feature-list {
+    text-align: left;
+    padding-left: 1.5rem;
+    margin: 0.8rem 0;
+    width: 100%;
+}
+
+.service-features li,
+.feature-list li {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.outcome {
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.8rem;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: left;
+}
+
+/* Process Step Styling */
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 900px) {
     .nav-links {
@@ -407,6 +561,12 @@ footer {
     .section-title {
         font-size: 1.6rem;
     }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -418,6 +578,14 @@ footer {
         display: block;
         width: 100%;
         margin: 0.6rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header p {
+        font-size: 1.1rem;
     }
 }
 
@@ -432,5 +600,20 @@ footer {
     
     .footer-container {
         grid-template-columns: 1fr;
+    }
+    
+    .feature-card, 
+    .service-card, 
+    .value-card, 
+    .approach-card, 
+    .step-card, 
+    .solution-card,
+    .process-step {
+        padding: 1.2rem;
+    }
+    
+    .service-features,
+    .feature-list {
+        padding-left: 1.2rem;
     }
 }

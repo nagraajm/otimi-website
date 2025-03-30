@@ -1,0 +1,107 @@
+/* 
+ * Offerings Page Specific CSS for OTIMI Source Website
+ * With improved mobile responsiveness
+ */
+
+/* Offerings Intro */
+.offerings-intro {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Offering Section */
+.offering-section {
+    padding: 3rem 5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Why Choose Section */
+.why-choose-section {
+    background-color: var(--light-bg);
+    padding: 3rem 5%;
+    position: relative;
+}
+
+.why-choose-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-color), var(--primary-blue));
+}
+
+/* Button styling */
+.btn-primary {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1024px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .offering-section {
+        padding: 2rem 4%;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+    
+    .intro-text {
+        font-size: 0.95rem;
+    }
+    
+    .cta-container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .offering-section {
+        padding: 1.5rem 4%;
+    }
+    
+    .btn-primary {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+}
