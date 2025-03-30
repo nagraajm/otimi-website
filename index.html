@@ -45,22 +45,22 @@
         </div>
     </section>
 
-    <!-- Tabs Container -->
-    <section id="tabs-container" class="tabs-container">
+    <!-- Tabs Container - ONLY contains the 3 tabbed sections -->
+    <div class="tabs-container">
         <div class="container">
+            <!-- Tab Navigation -->
             <div class="tabs">
-                <button class="tab-btn active" data-tab="what-we-do">What We Do</button>
-                <button class="tab-btn" data-tab="approach">Our Approach</button>
-                <button class="tab-btn" data-tab="why-trust">Why Trust Us</button>
+                <button class="tab-btn active" data-tab="tab-what-we-do">What We Do</button>
+                <button class="tab-btn" data-tab="tab-approach">Our Approach</button>
+                <button class="tab-btn" data-tab="tab-why-trust">Why Trust Us</button>
             </div>
             
-            <!-- Tab Content -->
+            <!-- Tab Content Panes -->
             <div class="tab-content">
                 <!-- What We Do Tab -->
-                <div id="what-we-do" class="tab-pane active">
+                <div id="tab-what-we-do" class="tab-pane active">
                     <h2 class="section-title">We help small and medium businesses</h2>
                     <div class="what-we-do-content">
-                        <!-- <h3 class="content-title"></h3> -->
                         <ul class="bullet-list">
                             <li>Automate repetitive tasks without heavy IT investments</li>
                             <li>Leverage AI to make smarter, faster decisions</li>
@@ -71,7 +71,7 @@
                 </div>
                 
                 <!-- Approach Tab -->
-                <div id="approach" class="tab-pane">
+                <div id="tab-approach" class="tab-pane">
                     <h2 class="section-title">AI That Works for You</h2>
                     <h3 class="content-title">We believe technology should simplify, not complicate.</h3>
                     <p>Our approach ensures AI works with your team not instead of it.</p>
@@ -107,7 +107,7 @@
                 </div>
                 
                 <!-- Why Trust Tab -->
-                <div id="why-trust" class="tab-pane">
+                <div id="tab-why-trust" class="tab-pane">
                     <h2 class="section-title">Why Small Businesses Trust OTIMI Source</h2>
                     <div class="trust-grid">
                         <div class="trust-card">
@@ -136,8 +136,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- End of Tabs Container -->
 
+    <!-- Regular (non-tabbed) sections start here -->
     <section id="results" class="results">
         <div class="container">
             <h2 class="section-title">Proven Results for Businesses Like Yours</h2>

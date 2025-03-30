@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initMobileMenu();
     highlightCurrentPage();
-    initTabSystem();
+    initWebsiteTabSystem(); // New tab system for What We Do, Our Approach, and Why Trust sections
+    initSolutionTabSystem(); // Original tab system for solutions section
     initSmoothScrolling();
     initLazyLoading();
 });
@@ -117,10 +118,39 @@ function highlightCurrentPage() {
 }
 
 /**
+ * Website tab system for What We Do, Our Approach, and Why Trust sections
+ */
+function initWebsiteTabSystem() {
+    const tabButtons = document.querySelectorAll('.tabs .tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-content .tab-pane');
+    
+    // Only proceed if elements exist
+    if (!tabButtons.length || !tabPanes.length) return;
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons and panes
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Show corresponding tab content
+            const tabId = this.getAttribute('data-tab');
+            const tabPane = document.getElementById(tabId);
+            if (tabPane) {
+                tabPane.classList.add('active');
+            }
+        });
+    });
+}
+
+/**
  * Tab system for solutions section
  */
-function initTabSystem() {
-    const tabBtns = document.querySelectorAll('.tab-btn');
+function initSolutionTabSystem() {
+    const tabBtns = document.querySelectorAll('.solution-tabs .tab-btn');
     const solutionContent = document.querySelector('.solution-content');
     
     // Only proceed if elements exist
