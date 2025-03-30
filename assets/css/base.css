@@ -378,15 +378,18 @@ footer {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Standardized Card and Icon Styling */
+/* Enhanced Card and Icon Styling for consistent use across all pages */
+
+/* Base Card Grid Layout */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.2rem;
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Enhanced unified card styling */
 .feature-card, 
 .service-card, 
 .value-card, 
@@ -394,19 +397,41 @@ footer {
 .step-card, 
 .solution-card,
 .process-step {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease;
+    background: linear-gradient(to bottom, #ffffff 0%, #f9fdff 100%);
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    border: none;
+    transition: all 0.3s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Top border accent effect */
+.feature-card::before, 
+.service-card::before, 
+.value-card::before, 
+.approach-card::before, 
+.step-card::before, 
+.solution-card::before,
+.process-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #01637e, #01BBD4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover effects */
 .feature-card:hover, 
 .service-card:hover, 
 .value-card:hover, 
@@ -414,24 +439,37 @@ footer {
 .step-card:hover, 
 .solution-card:hover,
 .process-step:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px);
+    box-shadow: 0 12px 30px rgba(0, 160, 198, 0.15);
 }
 
+.feature-card:hover::before, 
+.service-card:hover::before, 
+.value-card:hover::before, 
+.approach-card:hover::before, 
+.step-card:hover::before, 
+.solution-card:hover::before,
+.process-step:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced Icon styling */
 .feature-icon, 
 .service-icon, 
 .value-icon, 
 .approach-icon, 
 .step-icon, 
 .solution-icon {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    background-color: #01BBD4;
+    background: linear-gradient(135deg, #0188a6 0%, #01BBD4 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.2rem;
+    margin: 0 auto 1.5rem;
     overflow: hidden;
+    box-shadow: 0 6px 15px rgba(1, 187, 212, 0.3);
 }
 
 .feature-icon img, 
@@ -456,6 +494,7 @@ footer {
     font-size: 1.8rem;
 }
 
+/* Card content styling */
 .feature-content, 
 .service-content, 
 .value-content, 
@@ -469,6 +508,7 @@ footer {
     width: 100%;
 }
 
+/* Card headings */
 .feature-content h3, 
 .service-content h3, 
 .value-content h3, 
@@ -476,10 +516,31 @@ footer {
 .step-content h3, 
 .solution-content h3 {
     color: var(--primary-blue);
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.6rem;
 }
 
+.feature-content h3::after, 
+.service-content h3::after, 
+.value-content h3::after, 
+.approach-content h3::after, 
+.step-content h3::after, 
+.solution-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, #01637e, #01BBD4);
+    border-radius: 2px;
+}
+
+/* Card paragraph text */
 .feature-content p, 
 .service-content p, 
 .value-content p, 
@@ -487,51 +548,77 @@ footer {
 .step-content p, 
 .solution-content p {
     color: var(--medium-text);
-    line-height: 1.5;
+    line-height: 1.6;
     font-size: 0.95rem;
 }
 
-/* Service features styling */
+/* Enhanced list styling for cards */
 .service-features,
 .feature-list {
     text-align: left;
     padding-left: 1.5rem;
-    margin: 0.8rem 0;
+    margin: 1rem 0;
     width: 100%;
 }
 
 .service-features li,
 .feature-list li {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
     font-size: 0.95rem;
+    position: relative;
+    padding-left: 0.5rem;
 }
 
+.service-features li::before,
+.feature-list li::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+/* Enhanced outcome section */
 .outcome {
-    border-top: 1px solid var(--border-color);
-    padding-top: 0.8rem;
-    margin-top: 0.5rem;
+    border-top: 1px solid rgba(0, 160, 198, 0.2);
+    padding-top: 1rem;
+    margin-top: 1rem;
     font-size: 0.95rem;
     width: 100%;
     text-align: left;
+    color: var(--primary-blue);
+    font-weight: 500;
 }
 
-/* Process Step Styling */
+/* Enhanced process step styling */
 .step-number {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, #0188a6 0%, #01BBD4 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 10px rgba(1, 187, 212, 0.3);
 }
 
-/* Responsive Design */
+/* Responsive adjustments for cards */
 @media screen and (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .nav-links {
         display: none;
         position: absolute;
@@ -562,14 +649,6 @@ footer {
         font-size: 1.6rem;
     }
     
-    .card-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 768px) {
     .footer-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -590,6 +669,36 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+    .feature-card, 
+    .service-card, 
+    .value-card, 
+    .approach-card, 
+    .step-card, 
+    .solution-card,
+    .process-step {
+        padding: 1.5rem;
+    }
+    
+    .feature-icon, 
+    .service-icon, 
+    .value-icon, 
+    .approach-icon, 
+    .step-icon, 
+    .solution-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.2rem;
+    }
+    
+    .feature-content h3::after, 
+    .service-content h3::after, 
+    .value-content h3::after, 
+    .approach-content h3::after, 
+    .step-content h3::after, 
+    .solution-content h3::after {
+        width: 30px;
+    }
+    
     .page-header h1 {
         font-size: 1.8rem;
     }
@@ -600,20 +709,5 @@ footer {
     
     .footer-container {
         grid-template-columns: 1fr;
-    }
-    
-    .feature-card, 
-    .service-card, 
-    .value-card, 
-    .approach-card, 
-    .step-card, 
-    .solution-card,
-    .process-step {
-        padding: 1.2rem;
-    }
-    
-    .service-features,
-    .feature-list {
-        padding-left: 1.2rem;
     }
 }

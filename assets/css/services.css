@@ -1,5 +1,6 @@
 /* 
  * Services Page Specific CSS for OTIMI Source Website
+ * Updated with uniform card heights and enhanced styling
  */
 
 /* Services Intro */
@@ -23,7 +24,7 @@
     margin: 0 auto;
 }
 
-/* Modified services container to show two cards per row */
+/* Modified services container to maintain uniform heights */
 .services-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -35,6 +36,25 @@
     grid-column: 1 / -1;
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* Add specific styling for service cards to ensure uniform height */
+.services-section .service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Service content needs to expand to fill available space */
+.services-section .service-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* This makes the content expand */
+}
+
+/* Push the features list to the bottom */
+.services-section .service-features {
+    margin-top: auto;
 }
 
 /* Reduced font size for service card titles - specific to services page */
@@ -53,13 +73,28 @@
 .service-features li {
     margin-bottom: 0.6rem;
     font-size: 0.95rem;
+    position: relative;
+}
+
+/* Enhanced bullet points for service features */
+.service-features li::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
 }
 
 .outcome {
-    border-top: 1px solid var(--border-color);
-    padding-top: 0.8rem;
-    margin-top: 0.5rem;
+    border-top: 1px solid rgba(0, 160, 198, 0.2);
+    padding-top: 1rem;
+    margin-top: auto; /* Push to bottom of card */
     font-size: 0.95rem;
+    color: var(--primary-blue);
+    font-weight: 500;
 }
 
 /* Approach Section */
@@ -87,6 +122,19 @@
     color: var(--primary-blue);
     margin: 1.5rem 0 1rem;
     font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.staffing-text h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, #01637e, #01BBD4);
+    border-radius: 2px;
 }
 
 .staffing-text ul {
@@ -96,16 +144,35 @@
 
 .staffing-text li {
     margin-bottom: 0.8rem;
+    position: relative;
+}
+
+/* Enhanced bullet points for staffing list */
+.staffing-text li::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
 }
 
 .staffing-image {
-    border-radius: 10px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
     border: 3px solid white;
     height: 100%;
     display: flex;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.staffing-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 160, 198, 0.15);
 }
 
 .staffing-image img {
@@ -127,44 +194,98 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 2rem;
+    justify-content: center;
 }
 
+/* Ensure all process steps have equal height */
 .process-step {
     flex: 1;
     min-width: 200px;
-    background-color: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease;
-    position: relative;
+    display: flex; 
+    flex-direction: column;
+    min-height: 280px; /* Set minimum height for uniformity */
 }
 
-.process-step:hover {
-    transform: translateY(-8px);
+/* Push the process step content to fill the card */
+.process-step .step-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
+/* Ensure paragraph fills available space */
+.process-step p {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Enhanced number styling for process step */
 .step-number {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, #0188a6 0%, #01BBD4 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 10px rgba(1, 187, 212, 0.3);
 }
 
 .process-step h3 {
     color: var(--primary-blue);
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.6rem;
 }
+
+.process-step h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, #01637e, #01BBD4);
+    border-radius: 2px;
+}
+
+/* Fix for the "Our Service Process" section cards */
+.service-process .process-step {
+    display: flex;
+    flex-direction: column;
+    min-height: 360px; /* Make all steps the same height */
+    height: 100%;
+}
+
+.service-process .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.service-process .process-step .step-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.service-process .process-step p {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Add this to your services.css file */
 
 /* Responsive design */
 @media screen and (max-width: 900px) {
@@ -182,8 +303,14 @@
         max-height: 300px;
     }
     
+    .process-steps {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
     .process-step {
-        min-width: 150px;
+        min-width: calc(50% - 1.5rem);
+        flex: 0 0 calc(50% - 1.5rem);
     }
 }
 
@@ -206,6 +333,8 @@
     
     .process-step {
         width: 100%;
+        min-width: 100%;
+        flex: 1 0 auto;
     }
 }
 
@@ -216,5 +345,9 @@
     
     .staffing-image {
         max-width: 100%;
+    }
+    
+    .process-step {
+        min-height: auto;
     }
 }
