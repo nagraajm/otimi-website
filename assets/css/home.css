@@ -77,61 +77,77 @@
     font-weight: normal; /* Making the text regular font weight, not bold */
 }
 
-/* Tabs Container */
-.tabs-container {
-    padding: 2rem 5% 1.5rem;
+/* Space between hero and tabs */
+.tab-spacing {
+    height: 30px;
+    background-color: var(--light-bg);
+}
+
+/* Improved Tabs Container - Based on screenshot with equal width tabs */
+.improved-tabs-container {
+    width: 100%;
     background-color: var(--light-bg);
     margin-bottom: 0;
 }
 
-.tabs {
+.improved-tabs {
     display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    background-color: var(--light-bg);
 }
 
-.tab-btn {
-    background: none;
-    border: none;
-    padding: 0.75rem 1.5rem;
+.improved-tab-btn {
+    background: white;
+    border: 2px solid #00A0C6;
+    border-bottom: none;
+    padding: 1rem 0.5rem;
     cursor: pointer;
-    font-size: 1.1rem;
-    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-blue);
+    text-align: center;
     position: relative;
     transition: all 0.3s ease;
+    flex: 1;
+    margin: 0;
 }
 
-.tab-btn:hover {
-    color: var(--primary-blue);
+/* First tab rounded corners */
+.improved-tab-btn:first-child {
+    border-top-left-radius: 5px;
 }
 
-.tab-btn.active {
-    color: var(--primary-blue);
+/* Last tab rounded corners */
+.improved-tab-btn:last-child {
+    border-top-right-radius: 5px;
+}
+
+.improved-tab-btn:hover {
+    background-color: rgba(0, 160, 198, 0.1);
+}
+
+.improved-tab-btn.active {
+    background-color: #01BBD4;
+    color: white;
+    border-color: #01BBD4;
     font-weight: 600;
+    z-index: 2;
 }
 
-.tab-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--accent-color);
+.improved-tab-content {
+    background-color: white;
+    padding: 2rem;
+    border-top: 2px solid #01BBD4;
+    position: relative;
+    z-index: 1;
 }
 
-.tab-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.tab-pane {
+.improved-tab-pane {
     display: none;
     animation: fadeIn 0.5s ease;
 }
 
-.tab-pane.active {
+.improved-tab-pane.active {
     display: block;
 }
 
@@ -228,6 +244,7 @@
     width: 40px;
     height: 40px;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .feature-content {
@@ -345,6 +362,7 @@
     width: 40px;
     height: 40px;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .step-content {
@@ -406,6 +424,7 @@
     width: 40px;
     height: 40px;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .solution-content {
@@ -467,57 +486,44 @@
     z-index: 1;
 }
 
-/* Responsive design updates */
+/* Responsive design for improved tabs */
 @media screen and (max-width: 768px) {
-    .hero {
-        justify-content: center !important;
-        min-height: 450px;
-        padding: 3rem 7% 2rem;
+    .improved-tabs {
+        flex-wrap: wrap;
     }
     
-    .hero-content {
-        margin-right: 0;
-        text-align: center !important;
-        align-items: center !important;
-        max-width: 90%;
+    .improved-tab-btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
     }
     
-    .hero h1, .hero-subtitle, .hero-intro {
-        text-align: center !important;
+    .improved-tab-content {
+        padding: 1.5rem 1rem;
     }
-    
-    .hero h1 {
-        font-size: 1.8rem;
-        white-space: normal; /* Allow text to wrap on small screens */
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .hero-intro {
-        font-size: 0.95rem;
-        line-height: 1.4;
-        text-align: justify !important;
-    }
-    
-    .tabs {
+}
+
+@media screen and (max-width: 576px) {
+    .improved-tabs {
         flex-direction: column;
-        align-items: center;
     }
     
-    .tab-btn {
-        width: 100%;
-        text-align: center;
-        padding: 0.5rem;
+    .improved-tab-btn {
+        border-radius: 0;
+        border: 2px solid #00A0C6;
+        border-bottom: none;
     }
     
-    .approach-grid, 
-    .trust-grid, 
-    .results-grid, 
-    .steps-container, 
-    .solutions-grid {
-        grid-template-columns: 1fr;
+    .improved-tab-btn:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    
+    .improved-tab-btn:last-child {
+        border-bottom: none;
+    }
+    
+    .improved-tab-content {
+        border-top: 2px solid #01BBD4;
     }
     
     .card-grid {
@@ -527,28 +533,6 @@
     .feature-card,
     .step-card,
     .solution-card {
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .hero {
-        min-height: 480px;
-        padding: 2.5rem 5% 1.5rem;
-    }
-    
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-    
-    .hero-intro {
-        font-size: 0.9rem;
-        line-height: 1.4;
+        max-width: 100%;
     }
 }
