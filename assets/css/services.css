@@ -23,10 +23,24 @@
     margin: 0 auto;
 }
 
+/* Modified services container to show two cards per row */
 .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+}
+
+/* Make the last card span full width if it's an odd number of cards */
+.services-container .service-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Reduced font size for service card titles - specific to services page */
+.services-section .service-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
 }
 
 /* Service features styling */
@@ -174,8 +188,16 @@
 }
 
 @media screen and (max-width: 768px) {
+    /* Make it single column on smaller screens */
     .services-container {
         grid-template-columns: 1fr;
+    }
+    
+    /* Remove the special styling for last odd card on mobile */
+    .services-container .service-card:last-child:nth-child(odd) {
+        grid-column: auto;
+        max-width: none;
+        margin: initial;
     }
     
     .process-steps {
