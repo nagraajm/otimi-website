@@ -320,9 +320,10 @@
     background-color: white;
 }
 
+/* Modified steps container for better sizing */
 .steps-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -331,7 +332,7 @@
 .step-card {
     background-color: var(--light-bg);
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 1.3rem;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border-color);
@@ -371,11 +372,27 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    text-align: center;
+}
+
+/* Reduced font size for step card titles */
+.step-card .content-title,
+.step-content h3.content-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-align: center;
 }
 
 .step-content p {
     width: 100%;
     text-align: center;
+    font-size: 0.9rem;
 }
 
 /* Solutions Section */
@@ -487,6 +504,12 @@
 }
 
 /* Responsive design for improved tabs */
+@media screen and (max-width: 992px) {
+    .steps-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 768px) {
     .improved-tabs {
         flex-wrap: wrap;
@@ -534,5 +557,11 @@
     .step-card,
     .solution-card {
         max-width: 100%;
+    }
+    
+    /* On mobile, titles can wrap if needed */
+    .step-card .content-title,
+    .step-content h3.content-title {
+        white-space: normal;
     }
 }
