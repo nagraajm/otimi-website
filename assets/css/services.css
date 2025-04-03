@@ -182,7 +182,7 @@
     display: block;
 }
 
-/* Service Process */
+/* Service Process - UPDATED */
 .service-process {
     padding: 3rem 5%;
     max-width: 1200px;
@@ -192,35 +192,30 @@
 .process-steps {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 2rem;
     justify-content: center;
 }
 
-/* Ensure all process steps have equal height */
 .process-step {
     flex: 1;
     min-width: 200px;
+    max-width: 230px; /* Limit width to fit all 5 in a row */
     display: flex; 
     flex-direction: column;
-    min-height: 280px; /* Set minimum height for uniformity */
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
-/* Push the process step content to fill the card */
-.process-step .step-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(1, 136, 166, 0.1);
 }
 
-/* Ensure paragraph fills available space */
-.process-step p {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-}
-
-/* Enhanced number styling for process step */
 .step-number {
     width: 45px;
     height: 45px;
@@ -239,7 +234,7 @@
 .process-step h3 {
     color: var(--primary-blue);
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     position: relative;
     padding-bottom: 0.6rem;
@@ -257,37 +252,35 @@
     border-radius: 2px;
 }
 
-/* Fix for the "Our Service Process" section cards */
-.service-process .process-step {
-    display: flex;
-    flex-direction: column;
-    min-height: 360px; /* Make all steps the same height */
-    height: 100%;
-}
-
-.service-process .process-steps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    justify-content: center;
-}
-
-.service-process .process-step .step-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.service-process .process-step p {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
+.process-step p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
 }
 
 /* Add this to your services.css file */
 
 /* Responsive design */
+@media screen and (max-width: 1200px) {
+    /* 3+2 layout for medium screens */
+    .process-steps {
+        justify-content: center;
+    }
+    
+    .process-step {
+        flex: 0 0 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+    }
+    
+    /* Force the last two items to new row and center them */
+    .process-step:nth-child(4),
+    .process-step:nth-child(5) {
+        flex: 0 0 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+        margin-top: 1rem;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .staffing-content {
         grid-template-columns: 1fr;
@@ -303,14 +296,17 @@
         max-height: 300px;
     }
     
-    .process-steps {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .process-step {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
     }
     
-    .process-step {
-        min-width: calc(50% - 1.5rem);
-        flex: 0 0 calc(50% - 1.5rem);
+    /* Reset forced layout for smaller screens */
+    .process-step:nth-child(4),
+    .process-step:nth-child(5) {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        margin-top: 1rem;
     }
 }
 
@@ -326,19 +322,9 @@
         max-width: none;
         margin: initial;
     }
-    
-    .process-steps {
-        flex-direction: column;
-    }
-    
-    .process-step {
-        width: 100%;
-        min-width: 100%;
-        flex: 1 0 auto;
-    }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
     .staffing-intro p {
         font-size: 1rem;
     }
@@ -348,6 +334,11 @@
     }
     
     .process-step {
-        min-height: auto;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .process-step:not(:first-child) {
+        margin-top: 1rem;
     }
 }
