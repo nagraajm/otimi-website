@@ -45,20 +45,20 @@
         </div>
     </section>
 
-    <!-- Improved Tabs Container with full-width styling -->
+    <!-- NEW TAB IMPLEMENTATION - Replaced the entire tab section -->
     <div class="tab-spacing"></div>
-    <div class="improved-tabs-container">
+    <div class="new-tabs-container">
         <!-- Tab Navigation -->
-        <div class="improved-tabs">
-            <button class="improved-tab-btn active" data-tab="tab-what-we-do">What We Do</button>
-            <button class="improved-tab-btn" data-tab="tab-approach">Our Approach</button>
-            <button class="improved-tab-btn" data-tab="tab-why-trust">Why Trust Us</button>
+        <div class="new-tabs-nav">
+            <button class="new-tab-btn active" data-tab="tab-what-we-do">What We Do</button>
+            <button class="new-tab-btn" data-tab="tab-approach">Our Approach</button>
+            <button class="new-tab-btn" data-tab="tab-why-trust">Why Trust Us</button>
         </div>
         
         <!-- Tab Content Panes -->
-        <div class="improved-tab-content">
+        <div class="new-tab-content">
             <!-- What We Do Tab -->
-            <div id="tab-what-we-do" class="improved-tab-pane active">
+            <div id="tab-what-we-do" class="new-tab-pane active">
                 <h2 class="section-title">We help Small and Medium businesses</h2>
                 <div class="what-we-do-content">
                     <div class="card-grid">
@@ -103,7 +103,7 @@
             </div>
             
             <!-- Approach Tab -->
-            <div id="tab-approach" class="improved-tab-pane">
+            <div id="tab-approach" class="new-tab-pane">
                 <h2 class="section-title">AI That Works for You</h2>
                 <div class="card-grid">
                     <div class="feature-card">
@@ -137,7 +137,7 @@
             </div>
             
             <!-- Why Trust Tab -->
-            <div id="tab-why-trust" class="improved-tab-pane">
+            <div id="tab-why-trust" class="new-tab-pane">
                 <h2 class="section-title">Why Small Businesses Trust OTIMI Source</h2>
                 <div class="card-grid">
                     <div class="feature-card">
@@ -323,10 +323,10 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-        // Tab functionality
+        // Tab functionality for new tabs
         document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.improved-tab-btn');
-            const tabPanes = document.querySelectorAll('.improved-tab-pane');
+            const tabButtons = document.querySelectorAll('.new-tab-btn');
+            const tabPanes = document.querySelectorAll('.new-tab-pane');
             
             tabButtons.forEach(button => {
                 button.addEventListener('click', function() {
