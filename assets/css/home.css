@@ -665,3 +665,15 @@
         white-space: normal;
     }
 }
+.result-card p {
+    color: var(--light-text);
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0;
+    white-space: normal; /* Allow normal wrapping */
+}
+
+/* Add non-breaking spaces for percentage ranges to keep them together */
+.result-card .percentage-range {
+    white-space: nowrap; /* Prevent breaking within the span */
+}
