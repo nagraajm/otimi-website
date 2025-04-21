@@ -93,7 +93,7 @@
     width: 100%;
     background-color: #f5f7fa;
     padding-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 /* Tab navigation row */
@@ -314,7 +314,7 @@
 
 /* Results Section - Removed icons */
 .results {
-    padding: 2rem 5% 1.5rem;
+    padding: 2rem 5% 3rem;
     background-color: var(--primary-blue);
     color: var(--light-text);
 }
@@ -363,8 +363,9 @@
 
 /* How We Work Section */
 .how-we-work {
-    padding: 2rem 5% 1.5rem;
-    background-color: white;
+    padding: 2rem 5% 3rem;
+    /* background-color: white; */
+    background-color: var(--light-bg);
 }
 
 /* Modified steps container for better sizing */
@@ -444,8 +445,8 @@
 
 /* Solutions Section */
 .solutions {
-    padding: 2rem 5% 1.5rem;
-    background-color: var(--light-bg);
+    padding: 2rem 5% 3rem;
+    background-color: white 
 }
 
 .solutions-grid {
@@ -507,13 +508,13 @@
 
 /* CTA Section */
 .cta {
-    padding: 2rem 5% 1.5rem;
+    padding: 3rem 5% 3rem;
     text-align: center;
     background-color: var(--light-bg);
 }
 
 .cta-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     background-color: white;
     padding: 2rem;
