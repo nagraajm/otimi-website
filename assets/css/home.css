@@ -77,6 +77,64 @@
     font-weight: normal; /* Making the text regular font weight, not bold */
 }
 
+/* Mobile responsiveness for hero section */
+@media screen and (max-width: 768px) {
+    .hero {
+        justify-content: center !important;
+        padding: 2rem 5% 1.5rem;
+        min-height: 350px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 0 10px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        white-space: normal;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-content ul {
+        padding-left: 1.2rem;
+        margin-bottom: 0;
+    }
+    
+    .hero-content ul li {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+}
+
+/* Smaller screens (phones) */
+@media screen and (max-width: 480px) {
+    .hero {
+        min-height: 300px;
+        padding: 1.5rem 5% 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-content ul li {
+        font-size: 0.85rem;
+    }
+}
+
 /* Space between hero and tabs */
 .tab-spacing {
     height: 30px;
