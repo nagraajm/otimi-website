@@ -262,6 +262,7 @@ textarea.form-control {
     padding: 0 1rem 1rem;
     border-top: 1px solid var(--medium-bg);
     font-size: 0.95rem;
+    text-align: justify;
 }
 
 /* Responsive design for contact page */
