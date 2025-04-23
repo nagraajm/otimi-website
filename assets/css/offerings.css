@@ -7,7 +7,7 @@
 .offerings-intro {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 5%;
+    padding: 2rem 5% 1rem;
     text-align: center;
 }
 
@@ -19,7 +19,7 @@
 
 /* Offering Section */
 .offering-section {
-    padding: 3rem 5%;
+    padding: 0.5rem 5% 3rem;
 }
 
 .container {
@@ -30,8 +30,8 @@
 
 /* Why Choose Section */
 .why-choose-section {
-    background-color: var(--light-bg);
-    padding: 3rem 5%;
+    background-color: white;
+    padding: 2rem 5% 3rem;
     position: relative;
 }
 
@@ -54,7 +54,9 @@
     text-align: center;
     white-space: nowrap;
 }
-
+.contact-bg{
+    padding: 2rem 5%;
+}
 /* Responsive design */
 @media screen and (max-width: 1024px) {
     .section-title {
