@@ -72,6 +72,25 @@
     font-size: 0.95rem;
 }
 
+.office-location {
+    margin-bottom: 1.2rem;
+    padding: 0.8rem;
+    background-color: rgba(0, 160, 198, 0.05);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+}
+
+.office-location:last-child {
+    margin-bottom: 0;
+}
+
+.office-location p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--dark-text);
+}
+
 .contact-cta {
     margin-top: 1.5rem;
     padding: 1.2rem;
